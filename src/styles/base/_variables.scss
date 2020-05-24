@@ -16,10 +16,11 @@ $breakpoints: (
 $font-family: sans-serif;
 $normal-font-weight: 400;
 $bold-font-weight: 600;
+$ratio: 1.25;
 
 $base-font-size: (
   min: 1rem, // 16
-  max: 1.25rem // 20
+  max: $ratio * 1rem // 20
 );
 $baseline-height: (
   min: 1.3125rem, // 21 = 16 * 1.3125
@@ -29,7 +30,6 @@ $small-font-size: (
   min: 0.875rem, // 14
   max: 0.8rem // 16
 );
-$ratio: 1.25;
 
 $h1: map-get($base-font-size, min) * $ratio * $ratio * $ratio * $ratio * $ratio * $ratio;
 $h2: map-get($base-font-size, min) * $ratio * $ratio * $ratio * $ratio * $ratio;
@@ -37,5 +37,7 @@ $h3: map-get($base-font-size, min) * $ratio * $ratio * $ratio * $ratio;
 $h4: map-get($base-font-size, min) * $ratio * $ratio * $ratio;
 $h5: map-get($base-font-size, min) * $ratio * $ratio;
 $h6: map-get($base-font-size, min) * $ratio;
+
+// Borders
 
 $border-radius: 3px;

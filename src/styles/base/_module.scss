@@ -426,6 +426,11 @@ input {
     map-get($baseline-height, max),
     2
   );
+
+  label > & {
+    display: inline-block;
+    width: auto;
+  }
 }
 
 [type="radio"],
