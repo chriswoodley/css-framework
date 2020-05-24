@@ -1,0 +1,107 @@
+@import 'variables';
+@import 'functions';
+
+@mixin interpolate($properties, $min-screen, $max-screen, $min-value, $max-value, $multiplier: 1) {
+  & {
+    @each $property in $properties {
+      #{$property}: calc(#{$min-value} * #{$multiplier});
+    }
+
+    @media screen and (min-width: $min-screen) {
+      @each $property in $properties {
+        #{$property}: calc-interpolation($min-screen, $min-value, $max-screen, $max-value, $multiplier);
+      }
+    }
+
+    @media screen and (min-width: $max-screen) {
+      @each $property in $properties {
+        #{$property}: calc(#{$max-value} * #{$multiplier});
+      }
+    }
+  }
+}
+
+@mixin heading($size, $top: 1, $bottom: 0) {
+  font-size: $size;
+  line-height: $size;
+  margin-top: calc((#{map-get($baseline-height, min)} - #{$size}) + #{map-get($baseline-height, min)} * #{$top});
+
+  @media screen and (min-width: map-get($breakpoints, sm)) {
+    $baseline: calc-interpolation(
+      map-get($breakpoints, sm),
+      map-get($baseline-height, min),
+      map-get($breakpoints, xlg),
+      map-get($baseline-height, max),
+    );
+
+    margin-top: calc((#{$baseline} - #{$size}) + #{$baseline} * #{$top});
+  }
+
+  @media screen and (min-width: map-get($breakpoints, xlg)) {
+    margin-top: calc((#{map-get($baseline-height, max)} - #{$size}) + #{map-get($baseline-height, max)} * #{$top});
+  }
+
+  @include interpolate(margin-bottom, map-get($breakpoints, sm), map-get($breakpoints, xlg), map-get($baseline-height, min), map-get($baseline-height, max, ), $bottom);
+}
+
+@mixin baseline() {
+  background-image: linear-gradient(to bottom, rgba(0, 170, 255, 0.3) 1px, transparent 1px);
+  background-position: left top;
+  background-repeat: repeat;
+  background-size: 100% map-get($baseline-height, min);
+
+  @media screen and (min-width: map-get($breakpoints, sm)) {
+    background-size:
+      100% calc-interpolation(
+        map-get($breakpoints, sm),
+        map-get($baseline-height, min),
+        map-get($breakpoints, xlg),
+        map-get($baseline-height, max),
+      );
+  }
+
+  @media screen and (min-width: map-get($breakpoints, xlg)) {
+    background-size: 100% map-get($baseline-height, max);
+  }
+}
+
+@mixin range-input-track() {
+  @include interpolate(
+    height,
+    map-get($breakpoints, sm),
+    map-get($breakpoints, xlg),
+    map-get($baseline-height, min),
+    map-get($baseline-height, max),
+    0.25
+  );
+
+  border-radius: 3px;
+  background-color: #000;
+}
+
+@mixin range-input-thumb() {
+  @include interpolate(
+    width height
+    map-get($breakpoints, sm),
+    map-get($breakpoints, xlg),
+    map-get($baseline-height, min),
+    map-get($baseline-height, max),
+    1
+  );
+
+  border: none;
+  position: relative;
+
+  @include interpolate(
+    top,
+    map-get($breakpoints, sm),
+    map-get($breakpoints, xlg),
+    map-get($baseline-height, min),
+    map-get($baseline-height, max),
+    -0.5
+  );
+
+  appearance: none;
+  border-radius: 3px;
+  background-color: #000;
+}

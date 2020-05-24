@@ -1,0 +1,14 @@
+import { Story, Preview, Meta } from '@storybook/addon-docs/blocks';
+import embeddedContentHtml from './embedded-content.html';
+
+# Storybook Docs for HTML
+
+<Meta title="Embedded Content/Examples" />
+
+<Preview mdxSource={
+  embeddedContentHtml
+}>
+  <Story name="Example" height="100px">
+    {() => embeddedContentHtml}
+  </Story>
+</Preview>

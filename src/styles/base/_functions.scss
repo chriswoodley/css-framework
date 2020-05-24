@@ -1,0 +1,11 @@
+@function strip-unit($number) {
+  @if type-of($number) == 'number' and not unitless($number) {
+    @return $number / ($number * 0 + 1);
+  }
+
+  @return $number;
+}
+
+@function calc-interpolation($min-screen, $min-value, $max-screen, $max-value, $multiplier: 1) {
+  @return calc((#{$min-value} + #{strip-unit($max-value - $min-value)} * (100vw - #{$min-screen}) / #{strip-unit($max-screen - $min-screen)}) * #{$multiplier});
+}

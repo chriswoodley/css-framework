@@ -1,0 +1,16 @@
+import { Story, Preview, Meta } from '@storybook/addon-docs/blocks';
+import contentSectioningHtml from './content-sectioning.html';
+
+<!-- https://raw.githubusercontent.com/storybookjs/storybook/next/examples/html-kitchen-sink/stories/addon-docs.stories.mdx -->
+
+# Storybook Docs for HTML
+
+<Meta title="Typography/Content Sectioning" />
+
+<Preview mdxSource={
+  contentSectioningHtml
+}>
+  <Story name="Headings" height="100px">
+    {() => contentSectioningHtml}
+  </Story>
+</Preview>

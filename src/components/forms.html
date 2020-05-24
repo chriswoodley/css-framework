@@ -1,0 +1,190 @@
+<div>
+  <button>Press me</button>
+  <input type="reset" value="Reset">
+  <input type="submit" value="Submit">
+</div>
+
+
+<div>
+  <label for="myBrowser">Choose a browser from this list:</label>
+  <input list="browsers" id="myBrowser" name="myBrowser" />
+  <datalist id="browsers">
+    <option value="Chrome">
+    <option value="Firefox">
+    <option value="Internet Explorer">
+    <option value="Opera">
+    <option value="Safari">
+    <option value="Microsoft Edge">
+  </datalist>
+</div>
+
+
+<form action="#">
+  <fieldset>
+    <legend>Simple fieldset</legend>
+    <input type="radio" id="radio">
+    <label for="radio">Spirit of radio</label>
+  </fieldset>
+</form>
+
+<form action="#">
+  <fieldset disabled>
+    <legend>Disabled fieldset</legend>
+    <div>
+      <label for="name">Name: </label>
+      <input type="text" id="name" value="Chris">
+    </div>
+    <div>
+      <label for="pwd">Archetype: </label>
+      <input type="password" id="pwd" value="Wookie">
+    </div>
+  </fieldset>
+</form>
+
+<div>
+  <p>Choose your monster's features:</p>
+
+  <div>
+    <input type="checkbox" id="scales" name="scales"
+          checked>
+    <label for="scales">Scales</label>
+  </div>
+
+  <div>
+    <input type="checkbox" id="horns" name="horns">
+    <label for="horns">Horns</label>
+  </div>
+</div>
+
+<div>
+  <p>Choose your monster's colors:</p>
+
+  <div>
+      <input type="color" id="head" name="head"
+            value="#e66465">
+      <label for="head">Head</label>
+  </div>
+
+  <div>
+      <input type="color" id="body" name="body"
+              value="#f6b73c">
+      <label for="body">Body</label>
+  </div>
+</div>
+
+
+<div>
+  <label for="start">Start date:</label>
+
+  <input type="date" id="start" name="trip-start"
+        value="2018-07-22"
+        min="2018-01-01" max="2018-12-31">
+</div>
+
+<div>
+  <label for="meeting-time">Choose a time for your appointment:</label>
+
+  <input type="datetime-local" id="meeting-time"
+        name="meeting-time" value="2018-06-12T19:30"
+        min="2018-06-07T00:00" max="2018-06-14T00:00">
+</div>
+
+<div>
+  <input type="email" placeholder="sophie@example.com">
+</div>
+
+
+<div>
+  <label for="file">Choose file to upload</label>
+  <input type="file" id="file" name="file" multiple>
+</div>
+
+<div>
+  <label for="start">Start month:</label>
+
+<input type="month" id="start" name="start"
+       min="2018-03" value="2018-05">
+</div>
+
+<div>
+  <label for="tentacles">Number of tentacles (10-100):</label>
+
+  <input type="number" id="tentacles" name="tentacles"
+        min="10" max="100">
+</div>
+
+<div>
+  <label for="pass">Password (8 characters minimum):</label>
+  <input type="password" id="pass" name="password"
+         minlength="8" required>
+</div>
+
+<div>
+  <label for="cowbell">Cowbell</label>
+  <input type="range" id="cowbell" name="cowbell"
+         min="0" max="100" value="90" step="10">
+</div>
+
+<div>
+  <label for="site-search">Search the site:</label>
+  <input type="search" id="site-search" name="q"
+    aria-label="Search through site content">
+</div>
+
+<div>
+<label for="phone">Enter your phone number:</label>
+
+<input type="tel" id="phone" name="phone"
+       pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+       required>
+</div>
+
+
+<div>
+<label for="appt">Choose a time for your meeting:</label>
+
+<input type="time" id="appt" name="appt"
+       min="09:00" max="18:00" required>
+</div>
+
+
+<div>
+  <label for="url">Enter an https:// URL:</label>
+
+<input type="url" name="url" id="url"
+       placeholder="https://example.com"
+       pattern="https://.*" size="30"
+       required>
+</div>
+
+
+<div>
+  <label for="week">Choose a week in May or June:</label>
+
+<input type="week" name="week" id="camp-week"
+       min="2018-W18" max="2018-W26" required>
+</div>
+
+<div>
+  <details>
+    <summary>System Requirements</summary>
+    <p>Requires a computer running an operating system. The computer
+    must have some memory and ideally some kind of long-term storage.
+    An input device as well as some form of output device is
+    recommended.</p>
+  </details>
+  <details>
+    <summary>System Requirements</summary>
+    <p>Requires a computer running an operating system. The computer
+    must have some memory and ideally some kind of long-term storage.
+    An input device as well as some form of output device is
+    recommended.</p>
+  </details>
+  <details>
+    <summary>System Requirements</summary>
+    <p>Requires a computer running an operating system. The computer
+    must have some memory and ideally some kind of long-term storage.
+    An input device as well as some form of output device is
+    recommended.</p>
+  </details>
+</div>
