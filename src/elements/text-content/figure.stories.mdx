@@ -1,0 +1,96 @@
+import { Story, Preview, Meta } from '@storybook/addon-docs/blocks';
+
+<Meta title="Text Content/Figure" />
+
+# Figure
+
+## Typographic Scale
+
+See https://www.modularscale.com/?16&px&1.25]
+
+All Text Content uses the base font size. The base font size is fluid. The table below illustrates
+the minimum font size for the minimum screen width and the maximum font size for the maximum screen
+width.
+
+| Ratio | Min Base Font Size | Max Base Font Size |  Min Screen Size | Max Screen Size |
+| :---  | :---               | :---               |  :---            | :---            |
+| 1.25  | 16px               | 20px               |  <= 667px        | >= 1920px
+
+
+## Images
+
+<Preview>
+  <Story name="Images" height="200px">
+    {
+      `
+      <figure>
+        <img
+        src="https://developer.mozilla.org/static/img/favicon144.png"
+        alt="The beautiful MDN logo.">
+        <figcaption>MDN Logo</figcaption>
+      </figure>
+      `
+    }
+  </Story>
+</Preview>
+
+## Code snippets
+
+<Preview>
+  <Story name="Code snippets" height="200px">
+    {
+      `
+      <figure>
+        <figcaption>Get browser details using <code>navigator</code>.</figcaption>
+<pre>function NavigatorExample() {
+  var txt;
+  txt = "Browser CodeName: " + navigator.appCodeName + "; ";
+  txt+= "Browser Name: " + navigator.appName + "; ";
+  txt+= "Browser Version: " + navigator.appVersion  + "; ";
+  txt+= "Cookies Enabled: " + navigator.cookieEnabled  + "; ";
+  txt+= "Platform: " + navigator.platform  + "; ";
+  txt+= "User-agent header: " + navigator.userAgent  + "; ";
+  console.log("NavigatorExample", txt);
+}</pre>
+      </figure>
+      `
+    }
+  </Story>
+</Preview>
+
+## Poems
+
+<Preview>
+  <Story name="Poems" height="200px">
+    {
+      `
+<figure>
+  <p style="white-space:pre">
+Bid me discourse, I will enchant thine ear,
+  Or like a fairy trip upon the green,
+Or, like a nymph, with long dishevell'd hair,
+  Dance on the sands, and yet no footing seen:
+Love is a spirit all compact of fire,
+  Not gross to sink, but light, and will aspire.</p>
+  <figcaption><cite>Venus and Adonis</cite>, by William Shakespeare</figcaption>
+</figure>
+      `
+    }
+  </Story>
+</Preview>
+
+## Quotations
+
+<Preview>
+  <Story name="Quotations" height="200px">
+    {
+      `
+      <figure>
+        <figcaption><cite>Edsger Dijkstra:</cite></figcaption>
+        <blockquote>If debugging is the process of removing software bugs,
+        then programming must be the process of putting them in.</blockquote>
+      </figure>
+      `
+    }
+  </Story>
+</Preview>

@@ -1,0 +1,71 @@
+import { Story, Preview, Meta } from '@storybook/addon-docs/blocks';
+
+<Meta title="Embedded Content" />
+
+# Embedded Content
+
+## Embed
+
+<Preview>
+  <Story name="Embed" height="200px">
+    {
+      `
+      <embed
+        src="https://archive.org/download/BigBuckBunny_124/Content/big_buck_bunny_720p_surround.mp4"
+        type="video/webm"
+        width="300"
+        height="169"
+      >
+      `
+    }
+  </Story>
+</Preview>
+
+## Iframe
+
+<Preview>
+  <Story name="Iframe" height="200px">
+    {
+      `
+      <iframe
+        title="Inline Frame Example"
+        width="300"
+        height="210"
+        src="https://www.openstreetmap.org/export/embed.html?bbox=-0.004017949104309083%2C51.47612752641776%2C0.00030577182769775396%2C51.478569861898606&layer=mapnik">
+      </iframe>
+      `
+    }
+  </Story>
+</Preview>
+
+## Object
+
+<Preview>
+  <Story name="Object" height="200px">
+    {
+      `
+      <object type="application/pdf"
+        data="https://interactive-examples.mdn.mozilla.net/media/examples/In-CC0.pdf"
+        width="300"
+        height="210">
+      </object>
+      `
+    }
+  </Story>
+</Preview>
+
+## Picture
+
+<Preview>
+  <Story name="Picture" height="200px">
+    {
+      `
+      <picture>
+        <source srcset="https://interactive-examples.mdn.mozilla.net/media/examples/surfer-240-200.jpg"
+                media="(min-width: 800px)">
+        <img src="https://interactive-examples.mdn.mozilla.net/media/examples/painted-hand-298-332.jpg" />
+      </picture>
+      `
+    }
+  </Story>
+</Preview>

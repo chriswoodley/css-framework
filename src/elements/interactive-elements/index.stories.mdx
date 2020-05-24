@@ -1,0 +1,35 @@
+import { Story, Preview, Meta } from '@storybook/addon-docs/blocks';
+
+<Meta title="Interactive Elements" />
+
+# Interactive Elements
+
+## Details
+
+<Preview>
+  <Story name="Details" height="200px">
+    {
+      `
+      <details>
+        <summary>System Requirements</summary>
+        <p>Requires a computer running an operating system. The computer
+        must have some memory and ideally some kind of long-term storage.
+        An input device as well as some form of output device is
+        recommended.</p>
+      </details>
+      `
+    }
+  </Story>
+</Preview>
+
+## Disabled Button
+
+<Preview>
+  <Story name="Disabled Button" height="200px">
+    {
+      `
+      <button disabled>Press me</button>
+      `
+    }
+  </Story>
+</Preview>

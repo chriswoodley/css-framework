@@ -1,0 +1,84 @@
+import { Story, Preview, Meta } from '@storybook/addon-docs/blocks';
+
+<Meta title="Text Content/Unordered List" />
+
+# Unordered List
+
+## Typographic Scale
+
+See https://www.modularscale.com/?16&px&1.25]
+
+All Text Content uses the base font size. The base font size is fluid. The table below illustrates
+the minimum font size for the minimum screen width and the maximum font size for the maximum screen
+width.
+
+| Ratio | Min Base Font Size | Max Base Font Size |  Min Screen Size | Max Screen Size |
+| :---  | :---               | :---               |  :---            | :---            |
+| 1.25  | 16px               | 20px               |  <= 667px        | >= 1920px
+
+
+## Simple example
+
+<Preview>
+  <Story name="Simple example" height="200px">
+    {
+      `
+      <ul>
+        <li>first item</li>
+        <li>second item</li>
+        <li>third item</li>
+      </ul>
+      `
+    }
+  </Story>
+</Preview>
+
+## Nesting a list
+
+<Preview>
+  <Story name="Nesting a list" height="200px">
+    {
+      `
+      <ul>
+        <li>first item</li>
+        <li>second item
+          <ul>
+            <li>second item first subitem</li>
+            <li>second item second subitem
+              <ul>
+                <li>second item second subitem first sub-subitem</li>
+                <li>second item second subitem second sub-subitem</li>
+                <li>second item second subitem third sub-subitem</li>
+              </ul>
+            </li>
+            <li>second item third subitem</li>
+          </ul>
+        </li>
+        <li>third item</li>
+      </ul>
+      `
+    }
+  </Story>
+</Preview>
+
+## Ordered list inside unordered list
+
+<Preview>
+  <Story name="Ordered list inside unordered list" height="200px">
+    {
+      `
+      <ul>
+        <li>first item</li>
+        <li>second item
+          <ol>
+            <li>second item first subitem</li>
+            <li>second item second subitem</li>
+            <li>second item third subitem</li>
+          </ol>
+        </li>
+        <li>third item</li>
+      </ul>
+      `
+    }
+  </Story>
+</Preview>

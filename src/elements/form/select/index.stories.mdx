@@ -1,0 +1,56 @@
+import { Story, Preview, Meta } from '@storybook/addon-docs/blocks';
+
+<Meta title="Form/Select" />
+
+# Select
+
+## Basic select
+
+<Preview>
+  <Story name="Basic select" height="200px">
+    {
+      `
+      <form>
+        <div>
+          <label for="choice">Choose One:</label>
+          <select name="choice" id="choice">
+            <option value="first">First Value</option>
+            <option value="second" selected>Second Value</option>
+            <option value="third">Third Value</option>
+          </select>
+        </div>
+      </form>
+      `
+    }
+  </Story>
+</Preview>
+
+## Advanced select with multiple features
+
+<Preview>
+  <Story name="Advanced select with multiple features" height="200px">
+    {
+      `
+      <form>
+        <div>
+          <label>
+            Please choose one or more pets:
+            <select name="pets" multiple size="4">
+              <optgroup label="4-legged pets">
+                <option value="dog">Dog</option>
+                <option value="cat">Cat</option>
+                <option value="hamster" disabled>Hamster</option>
+              </optgroup>
+              <optgroup label="Flying pets">
+                <option value="parrot">Parrot</option>
+                <option value="macaw">Macaw</option>
+                <option value="albatross">Albatross</option>
+              </optgroup>
+            </select>
+          </label>
+        </div>
+      </form>
+      `
+    }
+  </Story>
+</Preview>

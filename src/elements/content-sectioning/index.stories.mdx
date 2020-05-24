@@ -1,0 +1,40 @@
+import { Story, Preview, Meta } from '@storybook/addon-docs/blocks';
+
+<Meta title="Content Sectioning" />
+
+# Content Sectioning
+
+## Typographic Scale
+
+See https://www.modularscale.com/?16&px&1.25]
+
+The base font size is fluid. The table below illustrates the minimum font size for the minimum screen width and the maximum font size for the maximum screen width. The headings grow and shrink when the base font size is updated.
+
+| Ratio | Min Base Font Size | Max Base Font Size |  Min Screen Size | Max Screen Size |
+| :---  | :---               | :---               |  :---            | :---            |
+| 1.25  | 16px               | 20px               |  <= 667px        | >= 1920px
+
+| Element | Min Font Size | Max Font Size | Formula
+| :---    | :---          | :---          | :--
+| H1      | 61.0333px     | 73.3px        | min base font size x ratio<sup>6</sup>
+| H2      | 48.8333px     | 61.0333px     | min base font size x ratio<sup>5</sup>
+| H3      | 39.0667px     | 48.8333px     | min base font size x ratio<sup>4</sup>
+| H4      | 31.25px       | 39.0667px     | min base font size x ratio<sup>3</sup>
+| H5      | 25px          | 31.25px       | min base font size x ratio<sup>2</sup>
+| H6      | 20px          | 25px          | min base font size x ratio<sup>1</sup>
+
+
+<Preview>
+  <Story name="Headings">
+    {
+      `
+      <h1>Hello World</h1>
+      <h2>Hello World</h2>
+      <h3>Hello World</h3>
+      <h4>Hello World</h4>
+      <h5>Hello World</h5>
+      <h6>Hello World</h6>
+      `
+    }
+  </Story>
+</Preview>
