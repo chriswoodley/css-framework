@@ -41,3 +41,11 @@ $h6: map-get($base-font-size, min) * $ratio;
 // Borders
 
 $border-radius: 3px;
+
+// Colors
+
+$danube: #6093d1;
+
+$color-base: (
+  selection: $danube
+);
