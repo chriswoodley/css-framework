@@ -425,17 +425,9 @@ label {
 }
 
 input {
-  display: block;
   width: 100%;
-  margin: 0;
   padding-top: 0;
   padding-bottom: 0;
-
-  @extend %solid-1px-border;
-
-  font-family: inherit;
-  font-size: inherit;
-  font-weight: inherit;
 
   @include interpolate(
     padding-left padding-right,
@@ -445,6 +437,9 @@ input {
     map-get($base-line-height, max),
     1
   );
+
+  @extend %solid-1px-border;
+
   @include interpolate(
     height,
     map-get($breakpoints, sm),
@@ -529,8 +524,6 @@ input {
   appearance: none;
   background: transparent;
 
-
-
   /*
     range inputs are weird across browsers. can't combine selectors like
 
@@ -578,7 +571,9 @@ input {
 }
 
 [type="reset"],
-[type="submit"] {
+[type="submit"],
+[type="button"] {
+  appearance: none;
   display: inline-block;
   width: auto;
 }
@@ -630,10 +625,8 @@ form {
 
 select {
   width: 100%;
-  border-width: 1px;
-  border-style: solid;
-  border-color: inherit;
-  border-radius: $border-radius;
+
+  @extend %solid-1px-border;
 
   @include interpolate(
     height,
@@ -759,3 +752,5 @@ details {
     margin-bottom: 0;
   }
 }
+
+@import 'state';
