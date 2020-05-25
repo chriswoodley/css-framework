@@ -1,3 +1,4 @@
+// Credit: https://css-tricks.com/snippets/sass/strip-unit-function/
 @function strip-unit($number) {
   @if type-of($number) == 'number' and not unitless($number) {
     @return $number / ($number * 0 + 1);
@@ -6,6 +7,17 @@
   @return $number;
 }
 
+// Credit: https://codepen.io/MadeByMike/pen/vNrvdZ
 @function calc-interpolation($min-screen, $min-value, $max-screen, $max-value, $multiplier: 1) {
-  @return calc((#{$min-value} + #{strip-unit($max-value - $min-value)} * (100vw - #{$min-screen}) / #{strip-unit($max-screen - $min-screen)}) * #{$multiplier});
+  $a: ($max-value - $min-value) / ($max-screen - $min-screen);
+  $b: $min-value - $a * $min-screen;
+
+  $sign: "+";
+
+  @if ($b < 0) {
+    $sign: "-";
+    $b: abs($b);
+  }
+
+  @return calc((#{$a*100}vw #{$sign} #{$b}) * #{$multiplier});
 }
