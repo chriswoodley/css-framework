@@ -38,8 +38,8 @@ body {
     line-height,
     map-get($breakpoints, sm),
     map-get($breakpoints, xlg),
-    map-get($baseline-height, min),
-    map-get($baseline-height, max)
+    map-get($base-line-height, min),
+    map-get($base-line-height, max)
   );
   @include baseline();
 }
@@ -100,8 +100,8 @@ hr {
     margin-bottom,
     map-get($breakpoints, sm),
     map-get($breakpoints, xlg),
-    map-get($baseline-height, min),
-    map-get($baseline-height, max)
+    map-get($base-line-height, min),
+    map-get($base-line-height, max)
   );
 }
 
@@ -121,8 +121,8 @@ blockquote {
     margin-left margin-right,
     map-get($breakpoints, sm),
     map-get($breakpoints, xlg),
-    map-get($baseline-height, min),
-    map-get($baseline-height, max)
+    map-get($base-line-height, min),
+    map-get($base-line-height, max)
   );
 }
 
@@ -135,12 +135,20 @@ dd {
     margin-left,
     map-get($breakpoints, sm),
     map-get($breakpoints, xlg),
-    map-get($baseline-height, min),
-    map-get($baseline-height, max)
+    map-get($base-line-height, min),
+    map-get($base-line-height, max)
   );
 }
 
 figure {
+  @include interpolate(
+    margin-left margin-right,
+    map-get($breakpoints, sm),
+    map-get($breakpoints, xlg),
+    map-get($base-line-height, min),
+    map-get($base-line-height, max)
+  );
+
   & > :last-child {
     margin-bottom: 0;
   }
@@ -154,8 +162,9 @@ p + figcaption {
 
 hr {
   border-top: none;
-  border-bottom: 1px solid inherit;
-  margin-top: -1px;
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  border-bottom-color: inherit;
 }
 
 ul,
@@ -164,10 +173,24 @@ ol {
     padding-left,
     map-get($breakpoints, sm),
     map-get($breakpoints, xlg),
-    map-get($baseline-height, min),
-    map-get($baseline-height, max),
+    map-get($base-line-height, min),
+    map-get($base-line-height, max),
     2
   );
+}
+
+li > ul,
+li > ol {
+  @include interpolate(
+    padding-left,
+    map-get($breakpoints, sm),
+    map-get($breakpoints, xlg),
+    map-get($base-line-height, min),
+    map-get($base-line-height, max),
+    1
+  );
+
+  margin-bottom: 0;
 }
 
 // inline text semantics
@@ -313,14 +336,13 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
   width: 100%;
-  margin-top: -1px;
 
   @include interpolate(
     margin-bottom,
     map-get($breakpoints, sm),
     map-get($breakpoints, xlg),
-    map-get($baseline-height, min),
-    map-get($baseline-height, max),
+    map-get($base-line-height, min),
+    map-get($base-line-height, max),
     1
   );
 }
@@ -341,17 +363,17 @@ td {
     padding-left padding-right,
     map-get($breakpoints, sm),
     map-get($breakpoints, xlg),
-    map-get($baseline-height, min),
-    map-get($baseline-height, max),
+    map-get($base-line-height, min),
+    map-get($base-line-height, max),
     1
   );
   @include interpolate(
     padding-top padding-bottom,
     map-get($breakpoints, sm),
     map-get($breakpoints, xlg),
-    map-get($baseline-height, min),
-    map-get($baseline-height, max),
-    0.482
+    map-get($base-line-height, min),
+    map-get($base-line-height, max),
+    0.5
   );
 
   text-align: left;
@@ -378,16 +400,16 @@ button {
     padding-left padding-right,
     map-get($breakpoints, sm),
     map-get($breakpoints, xlg),
-    map-get($baseline-height, min),
-    map-get($baseline-height, max),
+    map-get($base-line-height, min),
+    map-get($base-line-height, max),
     1
   );
   @include interpolate(
     height,
     map-get($breakpoints, sm),
     map-get($breakpoints, xlg),
-    map-get($baseline-height, min),
-    map-get($baseline-height, max),
+    map-get($base-line-height, min),
+    map-get($base-line-height, max),
     2
   );
 
@@ -419,16 +441,16 @@ input {
     padding-left padding-right,
     map-get($breakpoints, sm),
     map-get($breakpoints, xlg),
-    map-get($baseline-height, min),
-    map-get($baseline-height, max),
+    map-get($base-line-height, min),
+    map-get($base-line-height, max),
     1
   );
   @include interpolate(
     height,
     map-get($breakpoints, sm),
     map-get($breakpoints, xlg),
-    map-get($baseline-height, min),
-    map-get($baseline-height, max),
+    map-get($base-line-height, min),
+    map-get($base-line-height, max),
     2
   );
 
@@ -459,18 +481,30 @@ input {
   background: transparent;
   border: none;
 
-  @include interpolate(
-    height width,
-    map-get($breakpoints, sm),
-    map-get($breakpoints, xlg),
-    map-get($baseline-height, min),
-    map-get($baseline-height, max),
-    2
-  );
+  &::-webkit-color-swatch-wrapper {
+    padding: 0;
+  }
+
+  &::-webkit-color-swatch {
+    border: none;
+  }
+
+  &::-moz-color-swatch {
+    border: none;
+  }
 
   & + label {
     display: inline-block;
   }
+
+  @include interpolate(
+    height width,
+    map-get($breakpoints, sm),
+    map-get($breakpoints, xlg),
+    map-get($base-line-height, min),
+    map-get($base-line-height, max),
+    2
+  );
 }
 
 [type="file"] {
@@ -478,49 +512,24 @@ input {
   max-width: 100%;
   border: none;
   padding: 0;
+  height: auto;
 }
 
 [type="range"] {
-  display: block;
-  height: auto;
-  padding: 0;
-  border: none;
-
   @include interpolate(
     height,
     map-get($breakpoints, sm),
     map-get($breakpoints, xlg),
-    map-get($baseline-height, min),
-    map-get($baseline-height, max)
+    map-get($base-line-height, min),
+    map-get($base-line-height, max)
   );
 
+  padding: 0;
+  border: none;
   appearance: none;
   background: transparent;
-  cursor: pointer;
 
-  &:focus {
-    outline: none;
 
-    &::-webkit-slider-runnable-track {
-      background: #555;
-    }
-
-    &::-webkit-slider-thumb {
-      background: #555;
-    }
-
-    &::-moz-range-thumb {
-      background: #555;
-    }
-
-    &::-moz-range-track {
-      background: #555;
-    }
-
-    &::-moz-range-progress {
-      background: #555;
-    }
-  }
 
   /*
     range inputs are weird across browsers. can't combine selectors like
@@ -537,23 +546,33 @@ input {
     @include range-input-thumb();
   }
 
-  /* stylelint-disable-next-line no-descending-specificity */
+  // /* stylelint-disable-next-line no-descending-specificity */
   &::-webkit-slider-runnable-track {
     @include range-input-track();
   }
 
-  /* stylelint-disable-next-line no-descending-specificity */
+  // /* stylelint-disable-next-line no-descending-specificity */
   &::-moz-range-thumb {
     @include range-input-thumb();
   }
 
-  /* stylelint-disable-next-line no-descending-specificity */
+  // /* stylelint-disable-next-line no-descending-specificity */
   &::-moz-range-track {
     @include range-input-track();
   }
 
-  /* stylelint-disable-next-line no-descending-specificity */
+  // /* stylelint-disable-next-line no-descending-specificity */
   &::-moz-range-progress {
+    @include interpolate(
+      height,
+      map-get($breakpoints, sm),
+      map-get($breakpoints, xlg),
+      map-get($base-line-height, min),
+      map-get($base-line-height, max),
+      0.25
+    );
+
+    appearance: none;
     background-color: #000;
   }
 }
@@ -573,16 +592,16 @@ fieldset {
     padding,
     map-get($breakpoints, sm),
     map-get($breakpoints, xlg),
-    map-get($baseline-height, min),
-    map-get($baseline-height, max),
+    map-get($base-line-height, min),
+    map-get($base-line-height, max),
     1
   );
   @include interpolate(
     margin-bottom,
     map-get($breakpoints, sm),
     map-get($breakpoints, xlg),
-    map-get($baseline-height, min),
-    map-get($baseline-height, max),
+    map-get($base-line-height, min),
+    map-get($base-line-height, max),
     1
   );
 }
@@ -599,13 +618,69 @@ form {
     margin-bottom,
     map-get($breakpoints, sm),
     map-get($breakpoints, xlg),
-    map-get($baseline-height, min),
-    map-get($baseline-height, max),
+    map-get($base-line-height, min),
+    map-get($base-line-height, max),
     1
   );
 
   & > :last-child {
     margin-bottom: 0;
+  }
+}
+
+select {
+  width: 100%;
+  border-width: 1px;
+  border-style: solid;
+  border-color: inherit;
+  border-radius: $border-radius;
+
+  @include interpolate(
+    height,
+    map-get($breakpoints, sm),
+    map-get($breakpoints, xlg),
+    map-get($base-line-height, min),
+    map-get($base-line-height, max),
+    1
+  );
+
+  background-color: #fff;
+
+  @extend small;
+
+  &[multiple] {
+    height: auto;
+  }
+}
+
+textarea {
+  width: 100%;
+  resize: vertical;
+
+  @include interpolate(
+    height,
+    map-get($breakpoints, sm),
+    map-get($breakpoints, xlg),
+    map-get($base-line-height, min),
+    map-get($base-line-height, max),
+    4
+  );
+  @include interpolate(
+    padding,
+    map-get($breakpoints, sm),
+    map-get($breakpoints, xlg),
+    map-get($base-line-height, min),
+    map-get($base-line-height, max),
+    0.5
+  );
+
+  &[rows] {
+    height: auto;
+  }
+
+  &[cols] {
+    resize: both;
+    width: auto;
   }
 }
 
@@ -616,24 +691,24 @@ summary {
     height,
     map-get($breakpoints, sm),
     map-get($breakpoints, xlg),
-    map-get($baseline-height, min),
-    map-get($baseline-height, max),
+    map-get($base-line-height, min),
+    map-get($base-line-height, max),
     2
   );
   @include interpolate(
     padding,
     map-get($breakpoints, sm),
     map-get($breakpoints, xlg),
-    map-get($baseline-height, min),
-    map-get($baseline-height, max),
+    map-get($base-line-height, min),
+    map-get($base-line-height, max),
     0.5
   );
   @include interpolate(
     margin-left margin-right,
     map-get($breakpoints, sm),
     map-get($breakpoints, xlg),
-    map-get($baseline-height, min),
-    map-get($baseline-height, max),
+    map-get($base-line-height, min),
+    map-get($base-line-height, max),
     -0.5
   );
 }
@@ -645,8 +720,8 @@ details {
     padding-left padding-right,
     map-get($breakpoints, sm),
     map-get($breakpoints, xlg),
-    map-get($baseline-height, min),
-    map-get($baseline-height, max),
+    map-get($base-line-height, min),
+    map-get($base-line-height, max),
     0.5
   );
 
@@ -655,8 +730,8 @@ details {
       padding-bottom,
       map-get($breakpoints, sm),
       map-get($breakpoints, xlg),
-      map-get($baseline-height, min),
-      map-get($baseline-height, max),
+      map-get($base-line-height, min),
+      map-get($base-line-height, max),
       0.5
     );
 
@@ -669,8 +744,8 @@ details {
         margin-bottom,
         map-get($breakpoints, sm),
         map-get($breakpoints, xlg),
-        map-get($baseline-height, min),
-        map-get($baseline-height, max),
+        map-get($base-line-height, min),
+        map-get($base-line-height, max),
         0.5
       );
     }

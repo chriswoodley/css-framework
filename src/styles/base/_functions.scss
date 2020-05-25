@@ -19,5 +19,5 @@
     $b: abs($b);
   }
 
-  @return calc((#{$a*100}vw #{$sign} #{$b}) * #{$multiplier});
+  @return calc(#{$a*100}vw #{$sign} #{$b} * #{$multiplier});
 }

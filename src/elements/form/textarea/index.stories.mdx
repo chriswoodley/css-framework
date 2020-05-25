@@ -4,10 +4,10 @@ import { Story, Preview, Meta } from '@storybook/addon-docs/blocks';
 
 # Textarea
 
-## Basic example
+## Basic example with placeholder
 
 <Preview>
-  <Story name="Basic example" height="200px">
+  <Story name="Basic example with placeholder" height="200px">
     {
       `
       <form>
@@ -16,10 +16,8 @@ import { Story, Preview, Meta } from '@storybook/addon-docs/blocks';
           <textarea
             name="textarea"
             id="comments"
-            rows="10"
-            cols="50"
-          >Write something here
-          </textarea>
+            placeholder="Write something here"
+          ></textarea>
         </div>
       </form>
       `
@@ -39,28 +37,9 @@ import { Story, Preview, Meta } from '@storybook/addon-docs/blocks';
           <textarea
             name="textarea"
             rows="5"
-            cols="30"
             minlength="10"
             maxlength="20"
-          >Write something here
-          </textarea>
-        </div>
-      </form>
-      `
-    }
-  </Story>
-</Preview>
-
-## Placeholder
-
-<Preview>
-  <Story name="Placeholder" height="200px">
-    {
-      `
-      <form>
-        <div>
-          <label for="comments">Comments:</label>
-          <textarea name="textarea" rows="5" cols="30"p laceholder="Comment text."></textarea>
+          >Write something here</textarea>
         </div>
       </form>
       `
@@ -80,7 +59,8 @@ import { Story, Preview, Meta } from '@storybook/addon-docs/blocks';
           <textarea
             name="textarea"
             id="comments"
-            rows="5" cols="30"
+            rows="5"
+            cols="30"
             disabled
           >I am a disabled textarea
           </textarea>
@@ -92,9 +72,8 @@ import { Story, Preview, Meta } from '@storybook/addon-docs/blocks';
             id="comments"
             rows="5"
             cols="30"
-            readonly|
-          >I am a readonly textarea
-          </textarea>
+            readonly
+          >I am a readonly textarea</textarea>
         </div>
       </form>
       `
