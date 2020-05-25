@@ -23,12 +23,12 @@ $base-font-size: (
   max: $ratio * 1rem // 20
 );
 $baseline-height: (
-  min: 1.3125rem, // 21 = 16 * 1.3125
+  min: 1.375rem, // 22 = 16 * 1.375
   max: 1.4rem // 28 = 20 * 1.4
 );
 $small-font-size: (
-  min: 0.875rem, // 14
-  max: 0.8rem // 16
+  min: 0.875rem, // 14 = 16 * 0.875
+  max: 0.8rem // 16 = 20 * 0.8
 );
 
 $h1: map-get($base-font-size, min) * $ratio * $ratio * $ratio * $ratio * $ratio * $ratio;
