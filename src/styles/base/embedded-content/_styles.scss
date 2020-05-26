@@ -1,0 +1,19 @@
+@import 'module';
+
+embed,
+iframe,
+object {
+  display: block;
+  vertical-align: middle;
+}
+
+iframe {
+  border: none;
+}
+
+picture {
+  max-width: 100%;
+  height: auto;
+}
+
+@import 'states';

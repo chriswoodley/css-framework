@@ -1,0 +1,52 @@
+@import 'reset';
+@import 'module';
+
+* {
+  box-sizing: border-box;
+
+  &::before,
+  &::after {
+    box-sizing: border-box;
+  }
+}
+
+html,
+body {
+  height: 100%;
+}
+
+html {
+  font-family: $font-family;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  @include interpolate(
+    font-size,
+    map-get($breakpoints, sm),
+    map-get($breakpoints, xlg),
+    map-get($base-font-size, min),
+    map-get($base-font-size, max)
+  );
+}
+
+body {
+  @include interpolate(
+    line-height,
+    map-get($breakpoints, sm),
+    map-get($breakpoints, xlg),
+    map-get($base-line-height, min),
+    map-get($base-line-height, max)
+  );
+  @include baseline();
+}
+
+@import 'states';
+@import 'sectioning-content/styles';
+@import 'text-content/styles';
+@import 'inline-text-semantics/styles';
+@import 'image-and-multimedia/styles';
+@import 'embedded-content/styles';
+@import 'table-content/styles';
+@import 'form/styles';
+@import 'interactive-elements/styles';

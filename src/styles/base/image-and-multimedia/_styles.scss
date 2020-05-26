@@ -1,0 +1,17 @@
+@import 'module';
+
+audio,
+video,
+img,
+picture {
+  display: block;
+  vertical-align: middle;
+}
+
+img {
+  height: auto;
+  max-width: 100%;
+  border: none;
+}
+
+@import 'states';

@@ -1,0 +1,293 @@
+@import 'module';
+
+button {
+  display: inline-block;
+  margin: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+
+  @extend %solid-1px-border;
+
+  @include interpolate(
+    padding-left padding-right,
+    map-get($breakpoints, sm),
+    map-get($breakpoints, xlg),
+    map-get($base-line-height, min),
+    map-get($base-line-height, max),
+    1
+  );
+  @include interpolate(
+    height,
+    map-get($breakpoints, sm),
+    map-get($breakpoints, xlg),
+    map-get($base-line-height, min),
+    map-get($base-line-height, max),
+    2
+  );
+
+  font-size: inherit;
+  color: inherit;
+  appearance: none;
+  cursor: pointer;
+}
+
+label {
+  display: block;
+  font-weight: $bold-font-weight;
+}
+
+input {
+  width: 100%;
+  padding-top: 0;
+  padding-bottom: 0;
+
+  @include interpolate(
+    padding-left padding-right,
+    map-get($breakpoints, sm),
+    map-get($breakpoints, xlg),
+    map-get($base-line-height, min),
+    map-get($base-line-height, max),
+    1
+  );
+
+  @extend %solid-1px-border;
+
+  @include interpolate(
+    height,
+    map-get($breakpoints, sm),
+    map-get($breakpoints, xlg),
+    map-get($base-line-height, min),
+    map-get($base-line-height, max),
+    2
+  );
+
+  label > & {
+    display: inline-block;
+    width: auto;
+  }
+}
+
+[type="radio"],
+[type="checkbox"] {
+  display: inline-block;
+  width: auto;
+  vertical-align: middle;
+  border: none;
+  height: auto;
+  padding: 0;
+
+  & + label {
+    display: inline-block;
+  }
+}
+
+[type="color"] {
+  display: inline-block;
+  vertical-align: middle;
+  padding: 0;
+  background: transparent;
+  border: none;
+
+  &::-webkit-color-swatch-wrapper {
+    padding: 0;
+  }
+
+  &::-webkit-color-swatch {
+    border: none;
+  }
+
+  &::-moz-color-swatch {
+    border: none;
+  }
+
+  & + label {
+    display: inline-block;
+  }
+
+  @include interpolate(
+    height width,
+    map-get($breakpoints, sm),
+    map-get($breakpoints, xlg),
+    map-get($base-line-height, min),
+    map-get($base-line-height, max),
+    2
+  );
+}
+
+[type="file"] {
+  width: auto;
+  max-width: 100%;
+  border: none;
+  padding: 0;
+  height: auto;
+}
+
+[type="range"] {
+  @include interpolate(
+    height,
+    map-get($breakpoints, sm),
+    map-get($breakpoints, xlg),
+    map-get($base-line-height, min),
+    map-get($base-line-height, max)
+  );
+
+  padding: 0;
+  border: none;
+  appearance: none;
+  background: transparent;
+
+  /*
+    range inputs are weird across browsers. can't combine selectors like
+
+    &::-webkit-slider-thumb,
+    &::-moz-range-thumb {}
+
+    so we can't use scss placeholders
+    instead we use mixins and separate rules
+  */
+
+  /* stylelint-disable-next-line no-descending-specificity */
+  &::-webkit-slider-thumb {
+    @include range-input-thumb();
+  }
+
+  // /* stylelint-disable-next-line no-descending-specificity */
+  &::-webkit-slider-runnable-track {
+    @include range-input-track();
+  }
+
+  // /* stylelint-disable-next-line no-descending-specificity */
+  &::-moz-range-thumb {
+    @include range-input-thumb();
+  }
+
+  // /* stylelint-disable-next-line no-descending-specificity */
+  &::-moz-range-track {
+    @include range-input-track();
+  }
+
+  // /* stylelint-disable-next-line no-descending-specificity */
+  &::-moz-range-progress {
+    @include interpolate(
+      height,
+      map-get($breakpoints, sm),
+      map-get($breakpoints, xlg),
+      map-get($base-line-height, min),
+      map-get($base-line-height, max),
+      0.25
+    );
+
+    appearance: none;
+    background-color: #000;
+  }
+}
+
+[type="reset"],
+[type="submit"],
+[type="button"] {
+  appearance: none;
+  display: inline-block;
+  width: auto;
+  cursor: pointer;
+}
+
+fieldset {
+  margin: 0;
+
+  @extend %solid-1px-border;
+
+  @include interpolate(
+    padding,
+    map-get($breakpoints, sm),
+    map-get($breakpoints, xlg),
+    map-get($base-line-height, min),
+    map-get($base-line-height, max),
+    1
+  );
+  @include interpolate(
+    margin-bottom,
+    map-get($breakpoints, sm),
+    map-get($breakpoints, xlg),
+    map-get($base-line-height, min),
+    map-get($base-line-height, max),
+    1
+  );
+}
+
+legend {
+  display: block;
+  font-weight: $bold-font-weight;
+}
+
+form {
+  display: block;
+
+  @include interpolate(
+    margin-bottom,
+    map-get($breakpoints, sm),
+    map-get($breakpoints, xlg),
+    map-get($base-line-height, min),
+    map-get($base-line-height, max),
+    1
+  );
+
+  & > :last-child {
+    margin-bottom: 0;
+  }
+}
+
+select {
+  width: 100%;
+
+  @extend %solid-1px-border;
+
+  @include interpolate(
+    height,
+    map-get($breakpoints, sm),
+    map-get($breakpoints, xlg),
+    map-get($base-line-height, min),
+    map-get($base-line-height, max),
+    1
+  );
+
+  background-color: #fff;
+
+  @extend small;
+
+  &[multiple] {
+    height: auto;
+  }
+}
+
+textarea {
+  width: 100%;
+  resize: vertical;
+
+  @include interpolate(
+    height,
+    map-get($breakpoints, sm),
+    map-get($breakpoints, xlg),
+    map-get($base-line-height, min),
+    map-get($base-line-height, max),
+    4
+  );
+  @include interpolate(
+    padding,
+    map-get($breakpoints, sm),
+    map-get($breakpoints, xlg),
+    map-get($base-line-height, min),
+    map-get($base-line-height, max),
+    0.5
+  );
+
+  &[rows] {
+    height: auto;
+  }
+
+  &[cols] {
+    resize: both;
+    width: auto;
+  }
+}
+
+@import 'states';

@@ -1,7 +1,4 @@
-::selection {
-  background-color: map-get($color-base, selection);
-  color: #fff;
-}
+@import 'module';
 
 button,
 [type="button"],
