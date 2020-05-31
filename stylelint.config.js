@@ -15,7 +15,7 @@ module.exports = {
     'property-no-vendor-prefix': true,
     'selector-no-vendor-prefix': true,
     'value-no-vendor-prefix': true,
-    'max-nesting-depth': 2,
+    'max-nesting-depth': 3,
 
     'selector-max-compound-selectors': 3,
     'selector-max-specificity': '0,2,1'
