@@ -35,6 +35,10 @@ var {
 
 kbd {
   @extend %solid-1px-border;
+
+  kbd {
+    border: none;
+  }
 }
 
 mark {
@@ -104,4 +108,4 @@ var {
   font-family: monospace;
 }
 
-@import 'states';
+@import 'theme';

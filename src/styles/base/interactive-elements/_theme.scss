@@ -1,0 +1,9 @@
+summary {
+  &:focus {
+    outline: none;
+
+    @include theme('light') {
+      outline: 2px dashed theme-props('focus', 'outline');
+    }
+  }
+}

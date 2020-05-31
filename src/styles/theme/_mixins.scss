@@ -1,0 +1,11 @@
+@mixin theme($mode, $theme: $color-theme) {
+  $theme-map: () !global;
+  $map: map-get($theme, $mode);
+
+  @each $map-key, $map-value in $map {
+    $theme-map: map-merge($theme-map, ($map-key: $map-value)) !global;
+  }
+
+  @content;
+  $theme-map: null !global;
+}

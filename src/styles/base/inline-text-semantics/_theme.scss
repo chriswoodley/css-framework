@@ -1,0 +1,14 @@
+a {
+  &:link,
+  &:visited {
+    @include theme('light') {
+      color: theme-props('accent', 'text');
+    }
+  }
+
+  &:focus {
+    @include theme('light') {
+      outline: 2px dashed theme-props('focus', 'outline');
+    }
+  }
+}

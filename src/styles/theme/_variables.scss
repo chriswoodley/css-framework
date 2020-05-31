@@ -1,0 +1,210 @@
+$white: shade(#fff, 1);
+$black: tint(#000, 2);
+$gray: tint(#000, 10);
+$light-gray: tint(#000, 18);
+$red: #c80a0a;
+$default-font-theme: (
+  light: (
+    heading: (
+      family: 'sans-serif',
+      weight: 400
+    ),
+    body: (
+      family: 'sans-serif',
+      weight: 400
+    ),
+  ),
+  dark: (
+    heading: (
+      family: 'serif',
+      weight: 400
+    ),
+    body: (
+      family: 'serif',
+      weight: 500
+    )
+  )
+);
+
+$default-color-theme: (
+  light: (
+    primary: (
+      selection: $black,
+      border: $black,
+      background: $white,
+      text: $black,
+      text-reversed: $white,
+      shadow: $black,
+      outline: $black
+    ),
+    secondary: (
+      selection: $black,
+      border: $gray,
+      background: $light-gray,
+      text: $black,
+      text-reversed: $white,
+      shadow: $black,
+      outline: $black
+    ),
+    accent: (
+      selection: $red,
+      border: $red,
+      background: $red,
+      text: $black,
+      text-reversed: $white,
+      shadow: $red,
+      outline: $red
+    ),
+    disabled: (
+      selection: $gray,
+      border: $gray,
+      background: $white,
+      text: $gray,
+      text-reversed: $gray,
+      shadow: $black,
+      outline: $red
+    ),
+    hover: (
+      selection: $black,
+      border: $black,
+      background: $black,
+      text: $white,
+      text-reversed: $black,
+      shadow: $black,
+      outline: $red
+    ),
+    active: (
+      selection: $black,
+      border: $red,
+      background:$red,
+      text: $black,
+      text-reversed: $white,
+      shadow: $black,
+      outline: $red
+    ),
+    focus: (
+      selection: $red,
+      border: $red,
+      background: $white,
+      text: $black,
+      text-reversed: $white,
+      shadow: $black,
+      outline: $red
+    ),
+    error: (
+      selection: $black,
+      border: #000,
+      background: #fff,
+      text: #000,
+      text-reversed: #fff,
+      shadow: #000,
+      outline: #fff
+    ),
+    success: (
+      selection: $black,
+      border: #000,
+      background: #fff,
+      text: #000,
+      text-reversed: #fff,
+      shadow: #000,
+      outline: #fff
+    ),
+    warning: (
+      selection: $black,
+      border: #000,
+      background: #fff,
+      text: #000,
+      text-reversed: #fff,
+      shadow: #000,
+      outline: #fff
+    )
+  ),
+  dark: (
+    primary: (
+      selection: yellow,
+      border: #000,
+      background: #fff,
+      text: yellow,
+      text-reversed: #000,
+      shadow: #000,
+      outline: #fff
+    ),
+    accent: (
+      selection: $black,
+      border: #000,
+      background: #fff,
+      text: #000,
+      text-reversed: #fff,
+      shadow: #000,
+      outline: #fff
+    ),
+    disabled: (
+      selection: $black,
+      border: #000,
+      background: #fff,
+      text: #000,
+      text-reversed: #fff,
+      shadow: #000,
+      outline: #fff
+    ),
+    hover: (
+      selection: $black,
+      border: #000,
+      background: #fff,
+      text: #000,
+      text-reversed: #fff,
+      shadow: #000,
+      outline: #fff
+    ),
+    active: (
+      selection: $black,
+      border: #000,
+      background: #fff,
+      text: #000,
+      text-reversed: #fff,
+      shadow: #000,
+      outline: #fff
+    ),
+    focus: (
+      selection: $black,
+      border: #000,
+      background: #fff,
+      text: #000,
+      text-reversed: #fff,
+      shadow: #000,
+      outline: #fff
+    ),
+    error: (
+      selection: $black,
+      border: #000,
+      background: #fff,
+      text: #000,
+      text-reversed: #fff,
+      shadow: #000,
+      outline: #fff
+    ),
+    success: (
+      selection: $black,
+      border: #000,
+      background: #fff,
+      text: #000,
+      text-reversed: #fff,
+      shadow: #000,
+      outline: #fff
+    ),
+    warning: (
+      selection: $black,
+      border: #000,
+      background: #fff,
+      text: #000,
+      text-reversed: #fff,
+      shadow: #000,
+      outline: #fff
+    )
+  ),
+);
+
+// Tip: swap out $default-color-theme with another map with the same shape
+$color-theme: $default-color-theme;
+// Tip: swap out $default-font-theme with another map with the same shape
+$font-theme: $default-font-theme;

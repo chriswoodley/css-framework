@@ -1,1 +1,10 @@
+@import 'base/reset';
 @import 'base/styles';
+@import 'base/sectioning-content/styles';
+@import 'base/text-content/styles';
+@import 'base/inline-text-semantics/styles';
+@import 'base/image-and-multimedia/styles';
+@import 'base/embedded-content/styles';
+@import 'base/table-content/styles';
+@import 'base/form/styles';
+@import 'base/interactive-elements/styles';

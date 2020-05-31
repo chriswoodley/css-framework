@@ -27,6 +27,10 @@ summary {
   );
 }
 
+summary {
+  cursor: pointer;
+}
+
 details {
   @extend %solid-1px-border;
 
@@ -74,4 +78,4 @@ details {
   }
 }
 
-@import 'states';
+@import 'theme';

@@ -1,4 +1,3 @@
-@import 'reset';
 @import 'module';
 
 * {
@@ -41,12 +40,4 @@ body {
   @include baseline();
 }
 
-@import 'states';
-@import 'sectioning-content/styles';
-@import 'text-content/styles';
-@import 'inline-text-semantics/styles';
-@import 'image-and-multimedia/styles';
-@import 'embedded-content/styles';
-@import 'table-content/styles';
-@import 'form/styles';
-@import 'interactive-elements/styles';
+@import 'theme';

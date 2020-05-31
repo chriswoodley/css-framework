@@ -6,6 +6,8 @@ table {
   border-spacing: 0;
   width: 100%;
 
+  @extend %solid-1px-border;
+
   @include interpolate(
     margin-bottom,
     map-get($breakpoints, sm),
@@ -16,18 +18,8 @@ table {
   );
 }
 
-th {
-  vertical-align: bottom;
-}
-
-td {
-  vertical-align: top;
-}
-
 th,
 td {
-  @extend %solid-1px-border;
-
   @include interpolate(
     padding-left padding-right,
     map-get($breakpoints, sm),
@@ -48,6 +40,23 @@ td {
   text-align: left;
 }
 
+th {
+  vertical-align: bottom;
+
+  & + th {
+    border-left: 1px solid;
+  }
+}
+
+td {
+  vertical-align: top;
+  border-top: 1px solid;
+
+  & + td {
+    border-left: 1px solid;
+  }
+}
+
 caption {
   caption-side: bottom;
   text-align: left;
@@ -56,4 +65,4 @@ caption {
   @extend small;
 }
 
-@import 'states';
+@import 'theme';

@@ -1,0 +1,20 @@
+::selection {
+  @include theme('light', $color-theme) {
+    background-color: theme-props('primary', 'selection');
+    color: theme-props('primary', 'text-reversed');
+  }
+
+  @media (prefers-color-scheme: dark) {
+    @include theme('dark', $color-theme) {
+      background-color: theme-props('primary', 'selection');
+      color: theme-props('primary', 'text-reversed');
+    }
+  }
+}
+
+body {
+  @include theme('light', $color-theme) {
+    background-color: theme-props('primary', 'background');
+    color: theme-props('primary', 'text');
+  }
+}

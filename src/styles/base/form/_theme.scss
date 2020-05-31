@@ -1,0 +1,161 @@
+@import 'module';
+
+button,
+[type="button"],
+[type="submit"],
+[type="reset"] {
+  @include theme('light') {
+    background-color: theme-props('primary', 'background');
+    border-color: theme-props('primary', 'border');
+  }
+
+  &:hover {
+    @include theme('light') {
+      background-color: theme-props('hover', 'background');
+      color: theme-props('hover', 'text');
+    }
+  }
+
+  &:active {
+    @include theme('light') {
+      background-color: theme-props('active', 'background');
+      color: theme-props('active', 'text');
+      border-color: theme-props('active', 'border');
+    }
+  }
+
+  &:focus {
+    outline: none;
+
+    @include theme('light') {
+      border: 2px dashed theme-props('focus', 'outline');
+    }
+
+    &:active {
+      @include theme('light') {
+        border: 2px dashed theme-props('primary', 'outline');
+      }
+    }
+  }
+
+  &::-moz-focus-outer,
+  &::-moz-focus-inner {
+    border: none;
+  }
+
+  &[disabled] {
+    cursor: not-allowed;
+
+    @include theme('light') {
+      background-color: theme-props('disabled', 'background');
+      color: theme-props('disabled', 'text');
+      border-color: theme-props('disabled', 'border');
+    }
+  }
+}
+
+fieldset {
+  &[disabled] {
+    cursor: not-allowed;
+
+    @include theme('light') {
+      background-color: theme-props('disabled', 'background');
+      color: theme-props('disabled', 'text');
+      border-color: theme-props('disabled', 'border');
+    }
+  }
+}
+
+[type="date"],
+[type="datetime-local"],
+[type="email"],
+[type="month"],
+[type="number"],
+[type="password"],
+[type="search"],
+[type="tel"],
+[type="text"],
+[type="time"],
+[type="url"],
+[type="week"] {
+  @include theme('light') {
+    background-color: theme-props('primary', 'background');
+    border-color: theme-props('primary', 'border');
+  }
+
+  &:focus {
+    outline: none;
+
+    @include theme('light') {
+      border: 2px dashed theme-props('focus', 'outline');
+    }
+  }
+
+  &::-moz-focus-outer,
+  &::-moz-focus-inner {
+    border: none;
+  }
+}
+
+[type="checkbox"] {
+  &:focus {
+    @include theme('light') {
+      outline: 2px dashed theme-props('focus', 'outline');
+    }
+  }
+}
+
+[type="file"],
+[type="range"],
+[type="color"] {
+  &:focus {
+    outline: none;
+
+    @include theme('light') {
+      border: 2px dashed theme-props('focus', 'outline');
+    }
+  }
+
+  &::-moz-focus-outer,
+  &::-moz-focus-inner {
+    border: none;
+  }
+}
+
+select {
+  @include theme('light') {
+    background-color: theme-props('primary', 'background');
+  }
+
+  &:focus {
+    outline: none;
+
+    @include theme('light') {
+      border: 2px dashed theme-props('focus', 'outline');
+    }
+  }
+}
+
+textarea {
+  @include theme('light') {
+    background-color: theme-props('primary', 'background');
+  }
+
+  &:focus {
+    outline: none;
+
+    @include theme('light') {
+      border: 2px dashed theme-props('focus', 'outline');
+    }
+  }
+
+  &[disabled] {
+    cursor: not-allowed;
+
+    @include theme('light') {
+      background-color: theme-props('disabled', 'background');
+      color: theme-props('disabled', 'text');
+      border-color: theme-props('disabled', 'border');
+    }
+  }
+}

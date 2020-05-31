@@ -1,0 +1,3 @@
+@function theme-props($keys...) {
+  @return map-deep-get($theme-map, $keys...);
+}
