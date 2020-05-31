@@ -1,0 +1,38 @@
+@import 'module';
+
+// Images and Multimedia
+
+audio,
+video,
+img,
+picture {
+  display: block;
+  vertical-align: middle;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  border: none;
+}
+
+// Embedded Content
+
+embed,
+iframe,
+object {
+  display: block;
+  vertical-align: middle;
+}
+
+iframe {
+  border: none;
+}
+
+picture {
+  width: auto;
+  max-width: 100%;
+  height: auto;
+}
+
+@import 'theme';

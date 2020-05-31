@@ -1,0 +1,22 @@
+@mixin heading($size, $top: 1, $bottom: 0) {
+  margin-top: calc((#{map-get($base-line-height, min)} - #{$size}) + #{map-get($base-line-height, min)} * #{$top});
+  font-size: $size;
+  line-height: $size;
+
+  @media screen and (min-width: map-get($breakpoints, sm)) {
+    $baseline: calc-interpolation(
+      map-get($breakpoints, sm),
+      map-get($base-line-height, min),
+      map-get($breakpoints, xlg),
+      map-get($base-line-height, max),
+    );
+
+    margin-top: calc((#{$baseline} - #{$size}) + #{$baseline} * #{$top});
+  }
+
+  @media screen and (min-width: map-get($breakpoints, xlg)) {
+    margin-top: calc((#{map-get($base-line-height, max)} - #{$size}) + #{map-get($base-line-height, max)} * #{$top});
+  }
+
+  @include interpolate(margin-bottom, map-get($breakpoints, sm), map-get($breakpoints, xlg), map-get($base-line-height, min), map-get($base-line-height, max, ), $bottom);
+}

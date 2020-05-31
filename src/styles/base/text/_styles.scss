@@ -1,0 +1,204 @@
+@import 'module';
+
+// Block Text Elements
+
+p,
+dl,
+ul,
+ol,
+pre,
+figure,
+figcaption,
+blockquote,
+hr {
+  @include interpolate(
+    margin-bottom,
+    map-get($breakpoints, sm),
+    map-get($breakpoints, xlg),
+    map-get($base-line-height, min),
+    map-get($base-line-height, max)
+  );
+}
+
+p,
+dl,
+ul,
+ol,
+pre,
+figure,
+figcaption,
+blockquote {
+  margin-top: 0;
+}
+
+blockquote {
+  @include interpolate(
+    margin-left margin-right,
+    map-get($breakpoints, sm),
+    map-get($breakpoints, xlg),
+    map-get($base-line-height, min),
+    map-get($base-line-height, max)
+  );
+}
+
+dd {
+  @include interpolate(
+    margin-left,
+    map-get($breakpoints, sm),
+    map-get($breakpoints, xlg),
+    map-get($base-line-height, min),
+    map-get($base-line-height, max)
+  );
+}
+
+figure {
+  @include interpolate(
+    margin-left margin-right,
+    map-get($breakpoints, sm),
+    map-get($breakpoints, xlg),
+    map-get($base-line-height, min),
+    map-get($base-line-height, max)
+  );
+
+  & > :last-child {
+    margin-bottom: 0;
+  }
+}
+
+pre,
+img + figcaption,
+p + figcaption {
+  @extend small;
+}
+
+hr {
+  border-top: none;
+  border-bottom-color: inherit;
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+}
+
+ul,
+ol {
+  @include interpolate(
+    padding-left,
+    map-get($breakpoints, sm),
+    map-get($breakpoints, xlg),
+    map-get($base-line-height, min),
+    map-get($base-line-height, max),
+    2
+  );
+}
+
+li > ul,
+li > ol {
+  @include interpolate(
+    padding-left,
+    map-get($breakpoints, sm),
+    map-get($breakpoints, xlg),
+    map-get($base-line-height, min),
+    map-get($base-line-height, max),
+    1
+  );
+
+  margin-bottom: 0;
+}
+
+// Inline Text Elements
+
+a {
+  &:hover,
+  &:focus {
+    text-decoration: none;
+  }
+}
+
+abbr {
+  font-variant: all-small-caps;
+
+  &[title] {
+    cursor: help;
+  }
+}
+
+code,
+kbd,
+samp,
+var {
+  @extend small;
+  padding: 0.09rem 0.1rem 0;
+  line-height: 1;
+}
+
+kbd {
+  @extend %solid-1px-border;
+
+  kbd {
+    border: none;
+  }
+}
+
+mark {
+  padding: 0.05rem;
+
+  // Accessibility, for screen readers…
+  &::before,
+  &::after {
+    @extend %visually-hidden;
+  }
+
+  &::before {
+    content: " [highlight start] ";
+  }
+
+  &::after {
+    content: " [highlight end] ";
+  }
+}
+
+q {
+  quotes: "\201C" "\201D" "\2018" "\2019";
+
+  &::before {
+    content: open-quote;
+  }
+
+  &::after {
+    content: close-quote;
+  }
+}
+
+s {
+  // Accessibility, for screen readers…
+
+  &::before,
+  &::after {
+    @extend %visually-hidden;
+  }
+
+  &::before {
+    content: " [start of stricken text] ";
+  }
+
+  &::after {
+    content: " [end of stricken text] ";
+  }
+}
+
+small {
+  @include interpolate(
+    font-size,
+    map-get($breakpoints, sm),
+    map-get($breakpoints, xlg),
+    map-get($small-font-size, min),
+    map-get($small-font-size, max)
+  );
+}
+
+u {
+  text-decoration-color: inherit;
+  text-decoration-style: wavy;
+  text-decoration-line: underline;
+}
+
+@import 'theme';

@@ -1,30 +1,53 @@
-$white: shade(#fff, 1);
-$black: tint(#000, 2);
-$gray: tint(#000, 10);
-$light-gray: tint(#000, 18);
-$red: #c80a0a;
+// Font Themes
+
+$font-family: sans-serif;
+$normal-font-weight: 400;
+$bold-font-weight: 600;
+
 $default-font-theme: (
   light: (
     heading: (
       family: 'sans-serif',
-      weight: 400
+      normal: $normal-font-weight,
+      bold: $bold-font-weight,
     ),
     body: (
       family: 'sans-serif',
-      weight: 400
+      normal: $normal-font-weight,
+      bold: $bold-font-weight,
+    ),
+    code: (
+      family: 'monospace',
+      normal: $normal-font-weight,
+      bold: $bold-font-weight,
     ),
   ),
   dark: (
     heading: (
       family: 'serif',
-      weight: 400
+      normal: $normal-font-weight,
+      bold: $bold-font-weight,
     ),
     body: (
       family: 'serif',
-      weight: 500
-    )
+      normal: $normal-font-weight,
+      bold: $bold-font-weight,
+    ),
+    code: (
+      family: 'monospace',
+      normal: $normal-font-weight,
+      bold: $bold-font-weight,
+    ),
   )
 );
+
+// Color Themes
+
+$white: shade(#fff, 1);
+$black: tint(#000, 2);
+$gray: tint(#000, 10);
+$light-gray: tint(#000, 18);
+$red: #c80a0a;
 
 $default-color-theme: (
   light: (

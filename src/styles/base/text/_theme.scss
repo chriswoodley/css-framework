@@ -1,0 +1,40 @@
+// Block Text Elements
+dt {
+  @include theme('light', $font-theme) {
+    font-weight: theme-props('body', 'bold');
+  }
+}
+
+
+
+// Inline Text Elements
+
+a {
+  &:link,
+  &:visited {
+    @include theme('light') {
+      color: theme-props('accent', 'text');
+    }
+  }
+
+  &:focus {
+    @include theme('light') {
+      outline: 2px dashed theme-props('focus', 'outline');
+    }
+  }
+}
+
+b,
+strong,
+time,
+var {
+  @include theme('light', $font-theme) {
+    font-weight: theme-props('body', 'bold');
+  }
+}
+
+var {
+  @include theme('light', $font-theme) {
+    font-family: theme-props('code', 'family');
+  }
+}

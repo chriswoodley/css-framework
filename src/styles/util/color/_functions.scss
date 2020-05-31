@@ -1,0 +1,31 @@
+@function calc-step-percentage($step, $decimal) {
+  $percentage: percentage($step * $decimal);
+
+  @if $percentage > 100% {
+    @error('Step number is to high');
+  }
+
+  @if $percentage < 0% {
+    @error('Step number is to low');
+  }
+
+  @return $percentage;
+}
+
+@function tint($color, $step) {
+  $percentage: calc-step-percentage($step, 0.05);
+
+  @return mix(#fff, $color, $percentage);
+}
+
+@function shade($color, $step) {
+  $percentage: calc-step-percentage($step, 0.05);
+
+  @return mix(#000, $color, $percentage);
+}
+
+@function tone($color, $step) {
+  $percentage: calc-step-percentage($step, 0.05);
+
+  @return mix(tint(#000, 10), $color, $percentage);
+}

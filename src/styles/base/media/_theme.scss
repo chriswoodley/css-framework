@@ -1,0 +1,9 @@
+audio,
+video {
+  &:focus {
+    @include theme('light') {
+      border: 2px dashed theme-props('focus', 'border');
+      outline: none;
+    }
+  }
+}

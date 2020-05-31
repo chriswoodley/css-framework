@@ -1,0 +1,68 @@
+@import 'module';
+
+table {
+  width: 100%;
+  table-layout: fixed;
+  border-collapse: collapse;
+  border-spacing: 0;
+
+  @extend %solid-1px-border;
+
+  @include interpolate(
+    margin-bottom,
+    map-get($breakpoints, sm),
+    map-get($breakpoints, xlg),
+    map-get($base-line-height, min),
+    map-get($base-line-height, max),
+    1
+  );
+}
+
+th,
+td {
+  @include interpolate(
+    padding-left padding-right,
+    map-get($breakpoints, sm),
+    map-get($breakpoints, xlg),
+    map-get($base-line-height, min),
+    map-get($base-line-height, max),
+    1
+  );
+  @include interpolate(
+    padding-top padding-bottom,
+    map-get($breakpoints, sm),
+    map-get($breakpoints, xlg),
+    map-get($base-line-height, min),
+    map-get($base-line-height, max),
+    0.5
+  );
+
+  text-align: left;
+}
+
+th {
+  vertical-align: bottom;
+
+  & + th {
+    border-left: 1px solid;
+  }
+}
+
+td {
+  vertical-align: top;
+  border-top: 1px solid;
+
+  & + td {
+    border-left: 1px solid;
+  }
+}
+
+caption {
+  font-style: italic;
+  text-align: left;
+  caption-side: bottom;
+
+  @extend small;
+}
+
+@import 'theme';

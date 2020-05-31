@@ -15,7 +15,6 @@ body {
 }
 
 html {
-  font-family: $font-family;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -37,7 +36,12 @@ body {
     map-get($base-line-height, min),
     map-get($base-line-height, max)
   );
-  @include baseline();
 }
 
 @import 'theme';
+@import 'heading/styles';
+@import 'text/styles';
+@import 'form/styles';
+@import 'table/styles';
+@import 'media/styles';
+@import 'interactive/styles';

@@ -1,0 +1,20 @@
+// Credit: https://codepen.io/MadeByMike/pen/vNrvdZ
+@mixin interpolate($properties, $min-screen, $max-screen, $min-value, $max-value, $multiplier: 1) {
+  & {
+    @each $property in $properties {
+      #{$property}: calc(#{$min-value} * #{$multiplier});
+    }
+
+    @media screen and (min-width: $min-screen) {
+      @each $property in $properties {
+        #{$property}: calc-interpolation($min-screen, $min-value, $max-screen, $max-value, $multiplier);
+      }
+    }
+
+    @media screen and (min-width: $max-screen) {
+      @each $property in $properties {
+        #{$property}: calc(#{$max-value} * #{$multiplier});
+      }
+    }
+  }
+}

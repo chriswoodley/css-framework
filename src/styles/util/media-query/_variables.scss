@@ -1,0 +1,12 @@
+// portrait phones 0-666
+// landscape phones 667-1023
+// landscape tablets to desktop 1024 - 1279
+// large desktop 1280-1919
+// hd desktop 1920+
+
+$breakpoints: (
+  sm: 41.6875rem,
+  md: 64rem,
+  lg: 80rem,
+  xlg: 120rem
+);

@@ -1,5 +1,12 @@
 @import 'module';
 
+legend,
+label {
+  @include theme('light', $font-theme) {
+    font-weight: theme-props('body', 'bold');
+  }
+}
+
 button,
 [type="button"],
 [type="submit"],
@@ -9,17 +16,22 @@ button,
     border-color: theme-props('primary', 'border');
   }
 
+  &::-moz-focus-outer,
+  &::-moz-focus-inner {
+    border: none;
+  }
+
   &:hover {
     @include theme('light') {
-      background-color: theme-props('hover', 'background');
       color: theme-props('hover', 'text');
+      background-color: theme-props('hover', 'background');
     }
   }
 
   &:active {
     @include theme('light') {
-      background-color: theme-props('active', 'background');
       color: theme-props('active', 'text');
+      background-color: theme-props('active', 'background');
       border-color: theme-props('active', 'border');
     }
   }
@@ -38,29 +50,28 @@ button,
     }
   }
 
-  &::-moz-focus-outer,
-  &::-moz-focus-inner {
-    border: none;
-  }
-
   &[disabled] {
     cursor: not-allowed;
 
     @include theme('light') {
-      background-color: theme-props('disabled', 'background');
       color: theme-props('disabled', 'text');
+      background-color: theme-props('disabled', 'background');
       border-color: theme-props('disabled', 'border');
     }
   }
 }
 
 fieldset {
+  @include theme('light') {
+    border-color: theme-props('primary', 'border');
+  }
+
   &[disabled] {
     cursor: not-allowed;
 
     @include theme('light') {
-      background-color: theme-props('disabled', 'background');
       color: theme-props('disabled', 'text');
+      background-color: theme-props('disabled', 'background');
       border-color: theme-props('disabled', 'border');
     }
   }
@@ -83,17 +94,17 @@ fieldset {
     border-color: theme-props('primary', 'border');
   }
 
+  &::-moz-focus-outer,
+  &::-moz-focus-inner {
+    border: none;
+  }
+
   &:focus {
     outline: none;
 
     @include theme('light') {
       border: 2px dashed theme-props('focus', 'outline');
     }
-  }
-
-  &::-moz-focus-outer,
-  &::-moz-focus-inner {
-    border: none;
   }
 }
 
@@ -106,19 +117,18 @@ fieldset {
 }
 
 [type="file"],
-[type="range"],
 [type="color"] {
+  &::-moz-focus-outer,
+  &::-moz-focus-inner {
+    border: none;
+  }
+
   &:focus {
     outline: none;
 
     @include theme('light') {
       border: 2px dashed theme-props('focus', 'outline');
     }
-  }
-
-  &::-moz-focus-outer,
-  &::-moz-focus-inner {
-    border: none;
   }
 }
 
@@ -153,9 +163,60 @@ textarea {
     cursor: not-allowed;
 
     @include theme('light') {
-      background-color: theme-props('disabled', 'background');
       color: theme-props('disabled', 'text');
+      background-color: theme-props('disabled', 'background');
       border-color: theme-props('disabled', 'border');
+    }
+  }
+}
+
+[type="range"] {
+  &::-moz-focus-outer,
+  &::-moz-focus-inner {
+    border: none;
+  }
+
+  &:focus {
+    outline: none;
+
+    @include theme('light') {
+      border: 2px dashed theme-props('focus', 'outline');
+    }
+  }
+
+  &::-webkit-slider-thumb {
+    @include theme('light') {
+      background-color: theme-props('primary', 'background');
+      box-shadow: 1px 1px 3px rgba(theme-props('primary', 'shadow'), 0.5);
+    }
+  }
+
+  // /* stylelint-disable-next-line no-descending-specificity */
+  &::-webkit-slider-runnable-track {
+    @include theme('light') {
+      background-color: theme-props('accent', 'background');
+    }
+  }
+
+  // /* stylelint-disable-next-line no-descending-specificity */
+  &::-moz-range-thumb {
+    @include theme('light') {
+      background-color: theme-props('primary', 'background');
+      box-shadow: 1px 1px 3px rgba(theme-props('primary', 'shadow'), 0.5);
+    }
+  }
+
+  // /* stylelint-disable-next-line no-descending-specificity */
+  &::-moz-range-track {
+    @include theme('light') {
+      background-color: theme-props('accent', 'background');
+    }
+  }
+
+  // /* stylelint-disable-next-line no-descending-specificity */
+  &::-moz-range-progress {
+    @include theme('light') {
+      background-color: theme-props('accent', 'background');
     }
   }
 }
