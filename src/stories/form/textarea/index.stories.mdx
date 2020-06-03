@@ -1,0 +1,82 @@
+import { Story, Preview, Meta } from '@storybook/addon-docs/blocks';
+
+<Meta title="Form/Textarea" />
+
+# Textarea
+
+## Basic example with placeholder
+
+<Preview>
+  <Story name="Basic example with placeholder" height="200px">
+    {
+      `
+      <form>
+        <div>
+          <label for="comments">Comments:</label>
+          <textarea
+            name="textarea"
+            id="comments"
+            placeholder="Write something here"
+          ></textarea>
+        </div>
+      </form>
+      `
+    }
+  </Story>
+</Preview>
+
+## Min and max length
+
+<Preview>
+  <Story name="Min and max length" height="200px">
+    {
+      `
+      <form>
+        <div>
+          <label for="comments">Comments:</label>
+          <textarea
+            name="textarea"
+            rows="5"
+            minlength="10"
+            maxlength="20"
+          >Write something here</textarea>
+        </div>
+      </form>
+      `
+    }
+  </Story>
+</Preview>
+
+## Disabled and readonly
+
+<Preview>
+  <Story name="Disabled and readonly" height="200px">
+    {
+      `
+      <form>
+        <div>
+          <label for="comments">Comments:</label>
+          <textarea
+            name="textarea"
+            id="comments"
+            rows="5"
+            cols="30"
+            disabled
+          >I am a disabled textarea
+          </textarea>
+        </div>
+        <div>
+          <label for="comments">Comments:</label>
+          <textarea
+            name="textarea"
+            id="comments"
+            rows="5"
+            cols="30"
+            readonly
+          >I am a readonly textarea</textarea>
+        </div>
+      </form>
+      `
+    }
+  </Story>
+</Preview>

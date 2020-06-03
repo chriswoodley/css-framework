@@ -1,0 +1,30 @@
+import { Story, Preview, Meta } from '@storybook/addon-docs/blocks';
+
+<Meta title="Text/Keyboard Input (&lt;kbd&gt;)" />
+
+# Keyboard Input
+
+## Basic example
+
+<Preview>
+  <Story name="Basic example" height="200px">
+    {
+      `<p>Use the command <kbd>help mycommand</kbd> to view documentation for the command
+      "mycommand".</p>
+      `
+    }
+  </Story>
+</Preview>
+
+## Representing keystrokes within an input
+
+<Preview>
+  <Story name="Representing keystrokes within an input" height="200px">
+    {
+      `
+      <p>You can also create a new document using the keyboard shortcut
+        <kbd><kbd>Ctrl</kbd>+<kbd>N</kbd></kbd>.</p>
+      `
+    }
+  </Story>
+</Preview>

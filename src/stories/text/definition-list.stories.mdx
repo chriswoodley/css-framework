@@ -1,0 +1,86 @@
+import { Story, Preview, Meta } from '@storybook/addon-docs/blocks';
+
+<Meta title="Text/Definition List" />
+
+# Definition List
+
+## Typographic Scale
+
+See https://www.modularscale.com/?16&px&1.25]
+
+All Text Content uses the base font size. The base font size is fluid. The table below illustrates
+the minimum font size for the minimum screen width and the maximum font size for the maximum screen
+width.
+
+| Ratio | Min Base Font Size | Max Base Font Size |  Min Screen Size | Max Screen Size |
+| :---  | :---               | :---               |  :---            | :---            |
+| 1.25  | 16px               | 20px               |  <= 667px        | >= 1920px
+
+
+## Single term and description
+
+<Preview>
+  <Story name="Single term and description" height="200px">
+    {
+      `
+      <dl>
+        <dt>Firefox</dt>
+        <dd>
+          A free, open source, cross-platform,
+          graphical web browser developed by the
+          Mozilla Corporation and hundreds of
+          volunteers.
+        </dd>
+      </dl>
+      `
+    }
+  </Story>
+</Preview>
+
+## Multiple terms, single description
+
+<Preview>
+  <Story name="Multiple terms, single description " height="200px">
+    {
+      `
+      <dl>
+        <dt>Firefox</dt>
+        <dt>Mozilla Firefox</dt>
+        <dt>Fx</dt>
+        <dd>
+          A free, open source, cross-platform,
+          graphical web browser developed by the
+          Mozilla Corporation and hundreds of
+          volunteers.
+        </dd>
+      </dl>
+      `
+    }
+  </Story>
+</Preview>
+
+## Single term, multiple descriptions
+
+<Preview>
+  <Story name="Single term, multiple descriptions" height="200px">
+    {
+      `
+      <dl>
+        <dt>Firefox</dt>
+        <dd>
+          A free, open source, cross-platform,
+          graphical web browser developed by the
+          Mozilla Corporation and hundreds of
+          volunteers.
+        </dd>
+        <dd>
+          The Red Panda also known as the Lesser
+          Panda, Wah, Bear Cat or Firefox, is a
+          mostly herbivorous mammal, slightly larger
+          than a domestic cat (60 cm long).
+        </dd>
+      </dl>
+      `
+    }
+  </Story>
+</Preview>

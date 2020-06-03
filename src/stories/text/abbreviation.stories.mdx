@@ -1,0 +1,43 @@
+import { Story, Preview, Meta } from '@storybook/addon-docs/blocks';
+
+<Meta title="Text/Abbreviation (&lt;abbr&gt;)" />
+
+# Abbreviation
+
+## Marking up an abbreviation semantically
+
+<Preview>
+  <Story name="Marking up an abbreviation semantically" height="200px">
+    {
+      `
+      <p>Using <abbr>HTML</abbr> is fun and easy!</p>
+      `
+    }
+  </Story>
+</Preview>
+
+## Providing an expansion
+
+<Preview>
+  <Story name="Providing an expansion" height="200px">
+    {
+      `
+      <p>Ashok's joke made me <abbr title="Laugh Out Loud">LOL</abbr> big time.</p>
+      `
+    }
+  </Story>
+</Preview>
+
+## Defining an abbreviation
+
+<Preview>
+  <Story name="Defining an abbreviation" height="200px">
+    {
+      `
+      <p>A <dfn id="spec">Specification</dfn> (<abbr title="Specification">spec</abbr>) is a
+      document that outlines in detail how a technology or API is intended to function and how it
+      is accessed.</p
+      `
+    }
+  </Story>
+</Preview>

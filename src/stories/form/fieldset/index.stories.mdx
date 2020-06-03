@@ -1,0 +1,47 @@
+import { Story, Preview, Meta } from '@storybook/addon-docs/blocks';
+
+<Meta title="Form/Fieldset (&lt;fieldset&gt;)" />
+
+# Fieldset
+
+## Enabled Fieldset
+
+<Preview>
+  <Story name="Enabled Fieldset" height="200px">
+    {
+      `
+      <form action="#">
+        <fieldset>
+          <legend>Simple fieldset</legend>
+          <input type="radio" id="radio">
+          <label for="radio">Spirit of radio</label>
+        </fieldset>
+      </form>
+      `
+    }
+  </Story>
+</Preview>
+
+## Disabled Fieldset
+
+<Preview>
+  <Story name="Disabled Fieldset" height="200px">
+    {
+      `
+      <form action="#">
+        <fieldset disabled>
+          <legend>Disabled fieldset</legend>
+          <div>
+            <label for="name">Name: </label>
+            <input type="text" id="name" value="Chris">
+          </div>
+          <div>
+            <label for="pwd">Archetype: </label>
+            <input type="password" id="pwd" value="Wookie">
+          </div>
+        </fieldset>
+      </form>
+      `
+    }
+  </Story>
+</Preview>
