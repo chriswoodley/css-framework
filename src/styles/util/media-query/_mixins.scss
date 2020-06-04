@@ -1,0 +1,19 @@
+// Credit: https://sass-guidelin.es/#responsive-web-design-and-breakpoints
+@mixin respond-to($key, $map: $breakpoint) {
+  $raw-query: map-get($map, $key);
+
+  @if $raw-query {
+    $query: if(
+      type-of($raw-query) == 'string',
+      unquote($raw-query),
+      inspect($raw-query)
+    );
+
+    @media #{$query} {
+      @content;
+    }
+  } @else {
+    @error 'No value found for `#{$keys}`. '
+         + 'Please make sure it is defined in `$mq` map.';
+  }
+}

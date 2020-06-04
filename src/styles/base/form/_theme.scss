@@ -8,9 +8,9 @@ label {
 }
 
 button,
-[type="button"],
-[type="submit"],
-[type="reset"] {
+[type='button'],
+[type='submit'],
+[type='reset'] {
   @include theme('light') {
     background-color: theme-props('primary', 'background');
     border-color: theme-props('primary', 'border');
@@ -59,6 +59,37 @@ button,
       border-color: theme-props('disabled', 'border');
     }
   }
+
+  @include respond-to('dark', $color-scheme) {
+    @include theme('dark', $color-theme) {
+      color: theme-props('primary', 'text');
+      background-color: theme-props('primary', 'background');
+      border-color: theme-props('primary', 'border');
+    }
+
+    &:hover {
+      @include theme('dark') {
+        color: theme-props('hover', 'text');
+        background-color: theme-props('hover', 'background');
+      }
+    }
+
+    &:active {
+      @include theme('dark') {
+        color: theme-props('active', 'text');
+        background-color: theme-props('active', 'background');
+        border-color: theme-props('active', 'border');
+      }
+    }
+
+    &[disabled] {
+      @include theme('dark') {
+        color: theme-props('disabled', 'text');
+        background-color: theme-props('disabled', 'background');
+        border-color: theme-props('disabled', 'border');
+      }
+    }
+  }
 }
 
 fieldset {
@@ -75,23 +106,40 @@ fieldset {
       border-color: theme-props('disabled', 'border');
     }
   }
+
+  @include respond-to('dark', $color-scheme) {
+    @include theme('dark') {
+      border-color: theme-props('primary', 'border');
+    }
+
+    &[disabled] {
+      cursor: not-allowed;
+
+      @include theme('dark') {
+        color: theme-props('disabled', 'text');
+        background-color: theme-props('disabled', 'background');
+        border-color: theme-props('disabled', 'border');
+      }
+    }
+  }
 }
 
-[type="date"],
-[type="datetime-local"],
-[type="email"],
-[type="month"],
-[type="number"],
-[type="password"],
-[type="search"],
-[type="tel"],
-[type="text"],
-[type="time"],
-[type="url"],
-[type="week"] {
+[type='date'],
+[type='datetime-local'],
+[type='email'],
+[type='month'],
+[type='number'],
+[type='password'],
+[type='search'],
+[type='tel'],
+[type='text'],
+[type='time'],
+[type='url'],
+[type='week'] {
   @include theme('light') {
     background-color: theme-props('primary', 'background');
     border-color: theme-props('primary', 'border');
+    @include elevation(2, theme-props('primary', 'shadow'), $has-inset: true);
   }
 
   &::-moz-focus-outer,
@@ -105,10 +153,36 @@ fieldset {
     @include theme('light') {
       border: 2px dashed theme-props('focus', 'outline');
     }
+
+    &:invalid,
+    &:required {
+      @include theme('light') {
+        background-color: theme-props('error', 'background');
+        border-color: theme-props('error', 'border');
+      }
+    }
+
+    &:valid {
+      @include theme('light') {
+        background-color: theme-props('success', 'background');
+        border-color: theme-props('success', 'border');
+      }
+    }
+  }
+
+  @include respond-to('dark', $color-scheme) {
+    &:focus {
+      &:valid {
+        @include theme('dark') {
+          background-color: theme-props('success', 'background');
+          border-color: theme-props('success', 'border');
+        }
+      }
+    }
   }
 }
 
-[type="checkbox"] {
+[type='checkbox'] {
   &:focus {
     @include theme('light') {
       outline: 2px dashed theme-props('focus', 'outline');
@@ -116,8 +190,8 @@ fieldset {
   }
 }
 
-[type="file"],
-[type="color"] {
+[type='file'],
+[type='color'] {
   &::-moz-focus-outer,
   &::-moz-focus-inner {
     border: none;
@@ -144,11 +218,19 @@ select {
       border: 2px dashed theme-props('focus', 'outline');
     }
   }
+
+  &[multiple] {
+    @include theme('light') {
+      @include elevation(2, theme-props('primary', 'shadow'), $has-inset: true);
+    }
+  }
 }
 
 textarea {
   @include theme('light') {
     background-color: theme-props('primary', 'background');
+    @include elevation(2, theme-props('primary', 'shadow'), $has-inset: true);
+
   }
 
   &:focus {
@@ -170,7 +252,7 @@ textarea {
   }
 }
 
-[type="range"] {
+[type='range'] {
   &::-moz-focus-outer,
   &::-moz-focus-inner {
     border: none;
@@ -202,7 +284,7 @@ textarea {
   &::-moz-range-thumb {
     @include theme('light') {
       background-color: theme-props('primary', 'background');
-      box-shadow: 1px 1px 3px rgba(theme-props('primary', 'shadow'), 0.5);
+      @include elevation(2, theme-props('primary', 'shadow'));
     }
   }
 

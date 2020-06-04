@@ -22,6 +22,14 @@ a {
       outline: 2px dashed theme-props('focus', 'outline');
     }
   }
+
+  @include respond-to('dark', $color-scheme) {
+    &:hover {
+      @include theme('dark') {
+        color: theme-props('hover', 'text');
+      }
+    }
+  }
 }
 
 b,
@@ -36,5 +44,11 @@ var {
 var {
   @include theme('light', $font-theme) {
     font-family: theme-props('code', 'family');
+  }
+}
+
+u {
+  @include theme('light') {
+    text-decoration-color: theme-props('accent', 'text');
   }
 }

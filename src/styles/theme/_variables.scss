@@ -1,42 +1,37 @@
 // Font Themes
 
-$font-family: sans-serif;
-$normal-font-weight: 400;
-$bold-font-weight: 600;
-
 $default-font-theme: (
-  light: (
-    heading: (
-      family: 'sans-serif',
-      normal: $normal-font-weight,
-      bold: $bold-font-weight,
+  'light': (
+    'heading': (
+      'family': 'Lato, sans-serif',
+      'normal': 400,
     ),
-    body: (
-      family: 'sans-serif',
-      normal: $normal-font-weight,
-      bold: $bold-font-weight,
+    'body': (
+      'family': 'Merriweather, serif',
+      'normal': 400,
+      'bold': 700,
     ),
-    code: (
-      family: 'monospace',
-      normal: $normal-font-weight,
-      bold: $bold-font-weight,
+    'code': (
+      'family': 'monospace',
+      'normal': 400,
+      'bold': 700,
     ),
   ),
-  dark: (
-    heading: (
-      family: 'serif',
-      normal: $normal-font-weight,
-      bold: $bold-font-weight,
+  'dark': (
+    'heading': (
+      'family': 'Libre Baskerville, serif',
+      'normal': 400,
+      'bold': 700,
     ),
-    body: (
-      family: 'serif',
-      normal: $normal-font-weight,
-      bold: $bold-font-weight,
+    'body': (
+      'family': 'Open Sans, sans-serif',
+      'normal': 400,
+      'bold': 700,
     ),
-    code: (
-      family: 'monospace',
-      normal: $normal-font-weight,
-      bold: $bold-font-weight,
+    'code': (
+      'family': 'monospace',
+      'normal': 400,
+      'bold': 700,
     ),
   )
 );
@@ -44,186 +39,170 @@ $default-font-theme: (
 // Color Themes
 
 $white: shade(#fff, 1);
-$black: tint(#000, 2);
-$gray: tint(#000, 10);
+$black: tint(#000, 3);
+$gray: tint($black, 10);
 $light-gray: tint(#000, 18);
 $red: #c80a0a;
+$green: #297F2D;
+$light-green: #2CA12E;
 
 $default-color-theme: (
-  light: (
-    primary: (
-      selection: $black,
-      border: $black,
-      background: $white,
-      text: $black,
-      text-reversed: $white,
-      shadow: $black,
-      outline: $black
+  'light': (
+    'primary': (
+      'selection': $black,
+      'border': $black,
+      'background': $white,
+      'text': $black,
+      'text-reversed': $white,
+      'shadow': $black,
+      'outline': $black
     ),
-    secondary: (
-      selection: $black,
-      border: $gray,
-      background: $light-gray,
-      text: $black,
-      text-reversed: $white,
-      shadow: $black,
-      outline: $black
+    'secondary': (
+      'selection': $black,
+      'border': $gray,
+      'background': $light-gray,
+      'text': $black,
+      'text-reversed': $white,
+      'shadow': $black,
+      'outline': $black
     ),
-    accent: (
-      selection: $red,
-      border: $red,
-      background: $red,
-      text: $black,
-      text-reversed: $white,
-      shadow: $red,
-      outline: $red
+    'accent': (
+      'selection': $red,
+      'border': $red,
+      'background': $red,
+      'text': $red,
+      'text-reversed': $white,
+      'shadow': $black,
+      'outline': $red
     ),
-    disabled: (
-      selection: $gray,
-      border: $gray,
-      background: $white,
-      text: $gray,
-      text-reversed: $gray,
-      shadow: $black,
-      outline: $red
+    'disabled': (
+      'selection': $gray,
+      'border': $gray,
+      'background': $white,
+      'text': $gray,
+      'text-reversed': $gray,
+      'shadow': $black,
+      'outline': $red
     ),
-    hover: (
-      selection: $black,
-      border: $black,
-      background: $black,
-      text: $white,
-      text-reversed: $black,
-      shadow: $black,
-      outline: $red
+    'hover': (
+      'selection': $black,
+      'border': $black,
+      'background': $black,
+      'text': $white,
+      'text-reversed': $black,
+      'shadow': $black,
+      'outline': $red
     ),
-    active: (
-      selection: $black,
-      border: $red,
-      background:$red,
-      text: $black,
-      text-reversed: $white,
-      shadow: $black,
-      outline: $red
+    'active': (
+      'selection': $black,
+      'border': $red,
+      'background':$red,
+      'text': $black,
+      'text-reversed': $white,
+      'shadow': $black,
+      'outline': $red
     ),
-    focus: (
-      selection: $red,
-      border: $red,
-      background: $white,
-      text: $black,
-      text-reversed: $white,
-      shadow: $black,
-      outline: $red
+    'focus': (
+      'selection': $red,
+      'border': $red,
+      'background': $white,
+      'text': $black,
+      'text-reversed': $white,
+      'shadow': $black,
+      'outline': $red
     ),
-    error: (
-      selection: $black,
-      border: #000,
-      background: #fff,
-      text: #000,
-      text-reversed: #fff,
-      shadow: #000,
-      outline: #fff
+    'error': (
+      'selection': $black,
+      'border': $red,
+      'background': tint($red, 18),
+      'text': $black,
+      'text-reversed': $white,
+      'shadow': $black,
+      'outline': $black
     ),
-    success: (
-      selection: $black,
-      border: #000,
-      background: #fff,
-      text: #000,
-      text-reversed: #fff,
-      shadow: #000,
-      outline: #fff
+    'success': (
+      'selection': $black,
+      'border': $green,
+      'background': tint($green, 18),
+      'text': $black,
+      'text-reversed': $white,
+      'shadow': $black,
+      'outline': $red
     ),
-    warning: (
-      selection: $black,
-      border: #000,
-      background: #fff,
-      text: #000,
-      text-reversed: #fff,
-      shadow: #000,
-      outline: #fff
-    )
   ),
-  dark: (
-    primary: (
-      selection: yellow,
-      border: #000,
-      background: #fff,
-      text: yellow,
-      text-reversed: #000,
-      shadow: #000,
-      outline: #fff
+  'dark': (
+    'primary': (
+      'selection': $white,
+      'border': $white,
+      'background': $black,
+      'text': $white,
+      'text-reversed': $black,
+      'shadow': $black,
+      'outline': $white,
     ),
-    accent: (
-      selection: $black,
-      border: #000,
-      background: #fff,
-      text: #000,
-      text-reversed: #fff,
-      shadow: #000,
-      outline: #fff
+    'accent': (
+      'selection': $red,
+      'border': $red,
+      'background': $red,
+      'text': $red,
+      'text-reversed': $white,
+      'shadow': $black,
+      'outline': $red
     ),
-    disabled: (
-      selection: $black,
-      border: #000,
-      background: #fff,
-      text: #000,
-      text-reversed: #fff,
-      shadow: #000,
-      outline: #fff
+    'disabled': (
+      'selection': $gray,
+      'border': $gray,
+      'background': $black,
+      'text': $gray,
+      'text-reversed': $gray,
+      'shadow': $black,
+      'outline': $red
     ),
-    hover: (
-      selection: $black,
-      border: #000,
-      background: #fff,
-      text: #000,
-      text-reversed: #fff,
-      shadow: #000,
-      outline: #fff
+    'hover': (
+      'selection': $white,
+      'border': $white,
+      'background': $white,
+      'text': $white,
+      'text-reversed': $white,
+      'shadow': $black,
+      'outline': $red
     ),
-    active: (
-      selection: $black,
-      border: #000,
-      background: #fff,
-      text: #000,
-      text-reversed: #fff,
-      shadow: #000,
-      outline: #fff
+    'active': (
+      'selection': $white,
+      'border': $red,
+      'background':$red,
+      'text': $black,
+      'text-reversed': $white,
+      'shadow': $black,
+      'outline': $red
     ),
-    focus: (
-      selection: $black,
-      border: #000,
-      background: #fff,
-      text: #000,
-      text-reversed: #fff,
-      shadow: #000,
-      outline: #fff
+    'focus': (
+      'selection': $red,
+      'border': $red,
+      'background': $white,
+      'text': $black,
+      'text-reversed': $white,
+      'shadow': $black,
+      'outline': $red
     ),
-    error: (
-      selection: $black,
-      border: #000,
-      background: #fff,
-      text: #000,
-      text-reversed: #fff,
-      shadow: #000,
-      outline: #fff
+    'error': (
+      'selection': $black,
+      'border': $red,
+      'background': tint($red, 15),
+      'text': $black,
+      'text-reversed': $white,
+      'shadow': $black,
+      'outline': $black
     ),
-    success: (
-      selection: $black,
-      border: #000,
-      background: #fff,
-      text: #000,
-      text-reversed: #fff,
-      shadow: #000,
-      outline: #fff
+    'success': (
+      'selection': $black,
+      'border': $light-green,
+      'background': tint($light-green, 18),
+      'text': $black,
+      'text-reversed': $white,
+      'shadow': $black,
+      'outline': $red
     ),
-    warning: (
-      selection: $black,
-      border: #000,
-      background: #fff,
-      text: #000,
-      text-reversed: #fff,
-      shadow: #000,
-      outline: #fff
-    )
   ),
 );
 

@@ -1,4 +1,5 @@
 @import 'module';
+@import 'fonts';
 
 * {
   box-sizing: border-box;
@@ -21,8 +22,8 @@ html {
 
   @include interpolate(
     font-size,
-    map-get($breakpoints, sm),
-    map-get($breakpoints, xlg),
+    $min-screen,
+    $max-screen,
     map-get($base-font-size, min),
     map-get($base-font-size, max)
   );
@@ -31,8 +32,8 @@ html {
 body {
   @include interpolate(
     line-height,
-    map-get($breakpoints, sm),
-    map-get($breakpoints, xlg),
+    $min-screen,
+    $max-screen,
     map-get($base-line-height, min),
     map-get($base-line-height, max)
   );

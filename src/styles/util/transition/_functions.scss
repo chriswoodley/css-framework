@@ -1,0 +1,6 @@
+@function transition(
+  $property,
+  $duration: $short-duration,
+  $easing: $standard-easing) {
+  @return #{$property} #{$duration} #{$easing};
+}

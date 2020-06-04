@@ -1,12 +1,24 @@
 // portrait phones 0-666
 // landscape phones 667-1023
+$sm: 41.6875rem;
 // landscape tablets to desktop 1024 - 1279
+$md: 64rem;
 // large desktop 1280-1919
+$lg: 80rem;
 // hd desktop 1920+
+$xlg: 120rem;
 
-$breakpoints: (
-  sm: 41.6875rem,
-  md: 64rem,
-  lg: 80rem,
-  xlg: 120rem
+$breakpoint: (
+  'sm': screen and (min-width: $sm),
+  'md': screen and (min-width: $md),
+  'lg': screen and (min-width: $lg),
+  'xlg': screen and (min-width: $xlg),
 );
+
+$color-scheme: (
+  'light': (prefers-color-scheme: light),
+  'dark': (prefers-color-scheme: dark),
+);
+
+$min-screen: $sm;
+$max-screen: $xlg;

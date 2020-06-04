@@ -1,0 +1,19 @@
+
+// Timing function to decelerate
+$deceleration-easing: cubic-bezier(0, 0, .2, 1) !default;
+
+// Timing function to quickly accelerate and slowly decelerate
+$standard-easing: cubic-bezier(.4, 0, .2, 1) !default;
+
+// Timing function to accelerate
+$acceleration-easing: cubic-bezier(.4, 0, 1, 1) !default;
+
+// Timing function to quickly accelerate and decelerate
+$sharp-easing: cubic-bezier(.4, 0, .6, 1) !default;
+
+
+$very-short-duration: 100ms !default;
+$short-duration: 200ms !default;
+$medium-duration: 300ms !default;
+$long-duration: 400ms !default;
+$very-long-duration: 500ms !default;

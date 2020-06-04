@@ -22,6 +22,12 @@ td {
   @include theme('light') {
     border-top-color: theme-props('secondary', 'border');
   }
+
+  @include respond-to('dark', $color-scheme) {
+    @include theme('dark') {
+      color: theme-props('primary', 'text-reversed');
+    }
+  }
 }
 
 td + td {

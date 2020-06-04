@@ -3,20 +3,27 @@
   font-size: $size;
   line-height: $size;
 
-  @media screen and (min-width: map-get($breakpoints, sm)) {
+  @media screen and (min-width: $min-screen) {
     $baseline: calc-interpolation(
-      map-get($breakpoints, sm),
+      $min-screen,
       map-get($base-line-height, min),
-      map-get($breakpoints, xlg),
+      $max-screen,
       map-get($base-line-height, max),
     );
 
     margin-top: calc((#{$baseline} - #{$size}) + #{$baseline} * #{$top});
   }
 
-  @media screen and (min-width: map-get($breakpoints, xlg)) {
+  @media screen and (min-width: $max-screen) {
     margin-top: calc((#{map-get($base-line-height, max)} - #{$size}) + #{map-get($base-line-height, max)} * #{$top});
   }
 
-  @include interpolate(margin-bottom, map-get($breakpoints, sm), map-get($breakpoints, xlg), map-get($base-line-height, min), map-get($base-line-height, max, ), $bottom);
+  @include interpolate(
+    margin-bottom,
+    $min-screen,
+    $max-screen,
+    map-get($base-line-height, min),
+    map-get($base-line-height, max, ),
+    $bottom
+  );
 }

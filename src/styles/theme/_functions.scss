@@ -1,3 +1,9 @@
 @function theme-props($keys...) {
-  @return map-deep-get($theme-map, $keys...);
+  $value: map-deep-get($theme-map, $keys...);
+
+  @if type-of($value) == string {
+    @return unquote($value);
+  }
+
+  @return $value;
 }

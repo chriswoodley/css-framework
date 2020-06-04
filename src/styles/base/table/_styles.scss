@@ -10,8 +10,8 @@ table {
 
   @include interpolate(
     margin-bottom,
-    map-get($breakpoints, sm),
-    map-get($breakpoints, xlg),
+    $min-screen,
+    $max-screen,
     map-get($base-line-height, min),
     map-get($base-line-height, max),
     1
@@ -22,16 +22,16 @@ th,
 td {
   @include interpolate(
     padding-left padding-right,
-    map-get($breakpoints, sm),
-    map-get($breakpoints, xlg),
+    $min-screen,
+    $max-screen,
     map-get($base-line-height, min),
     map-get($base-line-height, max),
     1
   );
   @include interpolate(
     padding-top padding-bottom,
-    map-get($breakpoints, sm),
-    map-get($breakpoints, xlg),
+    $min-screen,
+    $max-screen,
     map-get($base-line-height, min),
     map-get($base-line-height, max),
     0.5

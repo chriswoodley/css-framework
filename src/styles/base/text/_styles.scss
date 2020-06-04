@@ -13,8 +13,8 @@ blockquote,
 hr {
   @include interpolate(
     margin-bottom,
-    map-get($breakpoints, sm),
-    map-get($breakpoints, xlg),
+    $min-screen,
+    $max-screen,
     map-get($base-line-height, min),
     map-get($base-line-height, max)
   );
@@ -34,8 +34,8 @@ blockquote {
 blockquote {
   @include interpolate(
     margin-left margin-right,
-    map-get($breakpoints, sm),
-    map-get($breakpoints, xlg),
+    $min-screen,
+    $max-screen,
     map-get($base-line-height, min),
     map-get($base-line-height, max)
   );
@@ -44,8 +44,8 @@ blockquote {
 dd {
   @include interpolate(
     margin-left,
-    map-get($breakpoints, sm),
-    map-get($breakpoints, xlg),
+    $min-screen,
+    $max-screen,
     map-get($base-line-height, min),
     map-get($base-line-height, max)
   );
@@ -54,8 +54,8 @@ dd {
 figure {
   @include interpolate(
     margin-left margin-right,
-    map-get($breakpoints, sm),
-    map-get($breakpoints, xlg),
+    $min-screen,
+    $max-screen,
     map-get($base-line-height, min),
     map-get($base-line-height, max)
   );
@@ -82,8 +82,8 @@ ul,
 ol {
   @include interpolate(
     padding-left,
-    map-get($breakpoints, sm),
-    map-get($breakpoints, xlg),
+    $min-screen,
+    $max-screen,
     map-get($base-line-height, min),
     map-get($base-line-height, max),
     2
@@ -94,8 +94,8 @@ li > ul,
 li > ol {
   @include interpolate(
     padding-left,
-    map-get($breakpoints, sm),
-    map-get($breakpoints, xlg),
+    $min-screen,
+    $max-screen,
     map-get($base-line-height, min),
     map-get($base-line-height, max),
     1
@@ -148,16 +148,16 @@ mark {
   }
 
   &::before {
-    content: " [highlight start] ";
+    content: ' [highlight start] ';
   }
 
   &::after {
-    content: " [highlight end] ";
+    content: ' [highlight end] ';
   }
 }
 
 q {
-  quotes: "\201C" "\201D" "\2018" "\2019";
+  quotes: '\201C' '\201D' '\2018' '\2019';
 
   &::before {
     content: open-quote;
@@ -177,19 +177,19 @@ s {
   }
 
   &::before {
-    content: " [start of stricken text] ";
+    content: ' [start of stricken text] ';
   }
 
   &::after {
-    content: " [end of stricken text] ";
+    content: ' [end of stricken text] ';
   }
 }
 
 small {
   @include interpolate(
     font-size,
-    map-get($breakpoints, sm),
-    map-get($breakpoints, xlg),
+    $min-screen,
+    $max-screen,
     map-get($small-font-size, min),
     map-get($small-font-size, max)
   );
@@ -199,6 +199,11 @@ u {
   text-decoration-color: inherit;
   text-decoration-style: wavy;
   text-decoration-line: underline;
+}
+
+i,
+em {
+  font-style: italic;
 }
 
 @import 'theme';

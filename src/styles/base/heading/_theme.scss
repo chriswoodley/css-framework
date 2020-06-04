@@ -6,5 +6,14 @@ h5,
 h6 {
   @include theme('light', $font-theme) {
     font-weight: theme-props('heading', 'normal');
+    font-family: theme-props('heading', 'family');
+  }
+
+
+  @include respond-to('dark', $color-scheme) {
+    @include theme('dark', $font-theme) {
+      font-weight: theme-props('heading', 'normal');
+      font-family: theme-props('heading', 'family');
+    }
   }
 }
