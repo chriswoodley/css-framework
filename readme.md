@@ -33,7 +33,7 @@ Ease of maintenance is achieved by adhering to a strict modular architecture and
 
 ### Fluid Typographic Scale System
 
-A based typographic scale is used to size headings and body copy. The text size is fluid and scales based on the screen width.
+A typographic scale is used to size headings and body copy. The text size is fluid and scales based on the screen width.
 
 ### Fluid Vertical Rhythm System
 
