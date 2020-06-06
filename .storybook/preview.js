@@ -1,2 +1,2 @@
 import '../src/styles/global.scss'
-import '../src/styles/preview.scss'
+import '../src/styles/storybook-preview.scss'
